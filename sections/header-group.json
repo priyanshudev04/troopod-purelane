@@ -346,7 +346,7 @@
         "homes_text": "Loved by 12 lakh+ homes"
       }
     },
-    "purelane_sticky_cta_GzCUNL": {
+    "purelane_sticky_cta_pPAxTM": {
       "type": "purelane-sticky-cta",
       "name": "Purelane Sticky CTA",
       "settings": {
@@ -354,6 +354,16 @@
         "subheading": "Free shipping, always",
         "button_label": "Build bundle",
         "button_link": ""
+      }
+    },
+    "purelane_coupon_ccqRmE": {
+      "type": "purelane-coupon",
+      "name": "Purelane Coupon",
+      "settings": {
+        "eyebrow": "JOIN THE PURELANE CLUB",
+        "heading": "GET ₹100 OFF YOUR FIRST BUNDLE",
+        "description": "Your first bundle deserves a little something extra.",
+        "coupon_code": "PURE100"
       }
     }
   },
@@ -365,7 +375,8 @@
     "purelane_combos_7n9XbV",
     "purelane_bundles_4Xfi4q",
     "purelane_ingredients_DKjQpz",
-    "purelane_sticky_cta_GzCUNL",
-    "purelane_reviews_phjAkQ"
+    "purelane_reviews_phjAkQ",
+    "purelane_sticky_cta_pPAxTM",
+    "purelane_coupon_ccqRmE"
   ]
 }
