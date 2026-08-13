@@ -1,0 +1,90 @@
+{{ 'purelane.css' | asset_url | stylesheet_tag }}
+<section class="purelane-hero" id="purelane-hero">
+  <div class="purelane-hero__grid">
+
+    <div class="purelane-hero__badges" aria-label="Product promises">
+      <div class="purelane-hero__badge">
+        <span class="purelane-hero__badge-icon">🌿</span>
+        <span>Plant<br>powered</span>
+      </div>
+
+      <div class="purelane-hero__badge">
+        <span class="purelane-hero__badge-icon">✓</span>
+        <span>Safe for<br>kids & pets</span>
+      </div>
+
+      <div class="purelane-hero__badge">
+        <span class="purelane-hero__badge-icon">◯</span>
+        <span>Zero harsh<br>chemicals</span>
+      </div>
+    </div>
+
+    <div class="purelane-hero__content">
+
+      <h1>
+        Clean<br>
+        That<br>
+        <span>Lasts</span>
+      </h1>
+
+      <div class="purelane-hero__rule"></div>
+
+      <p>
+        Homecare that works on the toughest grime, made from plants.
+        Kind to your home, your family and the world outside it.
+      </p>
+
+      <div class="purelane-hero__actions">
+        <a href="#shop" class="purelane-hero__button purelane-hero__button--primary">
+          Shop now →
+        </a>
+
+        <a href="#how" class="purelane-hero__button purelane-hero__button--secondary">
+          How it works
+        </a>
+      </div>
+
+      <div class="purelane-hero__mini-badges">
+        <span>🌿 Plant powered</span>
+        <span>✓ Kids & pet safe</span>
+        <span>◯ Zero harsh chem</span>
+      </div>
+
+    </div>
+
+    <div class="purelane-hero__product">
+      <div class="purelane-hero__offer">
+        <span>Single bottle</span>
+        <strong>₹200</strong>
+        <s>₹299</s>
+        <small>33% off</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purelane Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Clean home. Clear conscience."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Plant-powered cleaning that works without the harsh chemicals."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane Hero"
+    }
+  ]
+}
+{% endschema %}

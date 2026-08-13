@@ -1,0 +1,1094 @@
+.purelane-hero {
+  position: relative;
+  overflow: hidden;
+  background: #f4f1e8;
+  color: #073f39;
+  padding: 80px 6%;
+}
+
+.purelane-hero__grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  min-height: 620px;
+}
+
+.purelane-hero__badges {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.purelane-hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(7,63,57,.12);
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.purelane-hero__badge-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e4ebd5;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.purelane-hero__content h1 {
+  margin: 0;
+  font-size: clamp(60px, 7vw, 105px);
+  line-height: .88;
+  letter-spacing: -4px;
+  font-weight: 500;
+}
+
+.purelane-hero__content h1 span {
+  color: #8cae35;
+}
+
+.purelane-hero__rule {
+  width: 180px;
+  height: 1px;
+  margin: 30px 0;
+  background: #8cae35;
+}
+
+.purelane-hero__content p {
+  max-width: 520px;
+  margin: 0 0 28px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #45645f;
+}
+
+.purelane-hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.purelane-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .25s ease;
+}
+
+.purelane-hero__button--primary {
+  background: #006c65;
+  color: white;
+}
+
+.purelane-hero__button--secondary {
+  border: 1px solid #006c65;
+  color: #006c65;
+  background: transparent;
+}
+
+.purelane-hero__button:hover {
+  transform: translateY(-2px);
+}
+
+.purelane-hero__mini-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.purelane-hero__mini-badges span {
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.65);
+  font-size: 12px;
+}
+
+.purelane-hero__product {
+  min-height: 520px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 20%, #ffffff 0, #dce9df 32%, #9bb9aa 70%, #47756b 100%);
+}
+
+.purelane-hero__product::before {
+  content: "PURELANE";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 70px;
+  font-weight: 700;
+  color: rgba(255,255,255,.45);
+  letter-spacing: 8px;
+}
+
+.purelane-hero__offer {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+.purelane-hero__offer span {
+  width: 100%;
+  font-size: 12px;
+  color: #55716c;
+}
+
+.purelane-hero__offer strong {
+  font-size: 24px;
+}
+
+.purelane-hero__offer s {
+  color: #8a9693;
+}
+
+.purelane-hero__offer small {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #e4ebd5;
+  color: #4f7d10;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 900px) {
+  .purelane-hero {
+    padding: 50px 5%;
+  }
+
+  .purelane-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .purelane-hero__badges {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .purelane-hero__badge {
+    min-width: 150px;
+  }
+
+  .purelane-hero__product {
+    min-height: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .purelane-hero__content h1 {
+    font-size: 58px;
+    letter-spacing: -2px;
+  }
+
+  .purelane-hero__content p {
+    font-size: 16px;
+  }
+
+  .purelane-hero__mini-badges {
+    display: none;
+  }
+}
+/* =========================
+   PURELANE SHOP SECTION
+   ========================= */
+
+.purelane-shop {
+  background: #f8f7f2;
+  color: #073f39;
+  padding: 90px 6%;
+}
+
+.purelane-shop__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.purelane-shop__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.purelane-shop__eyebrow {
+  margin: 0 0 10px;
+  color: #8cae35;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.purelane-shop__header h2 {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.purelane-shop__view-all {
+  display: inline-flex;
+  align-items: center;
+  color: #006c65;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #006c65;
+}
+
+.purelane-shop__view-all:hover {
+  opacity: 0.7;
+}
+
+/* Product Grid */
+
+.purelane-shop__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* Product Card */
+
+.purelane-product-card {
+  min-width: 0;
+}
+
+/* Product Image */
+
+.purelane-product-card__image {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1.08;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e9eee7;
+  text-decoration: none;
+}
+
+.purelane-product-card__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.purelane-product-card:hover
+.purelane-product-card__image img {
+  transform: scale(1.04);
+}
+
+/* Placeholder */
+
+.purelane-product-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #55716c;
+  font-size: 14px;
+}
+
+/* Sold Out */
+
+.purelane-product-card__sold-out {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #073f39;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Product Information */
+
+.purelane-product-card__info {
+  padding: 18px 4px 0;
+}
+
+.purelane-product-card__info h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.purelane-product-card__info h3 a {
+  color: #073f39;
+  text-decoration: none;
+}
+
+.purelane-product-card__info h3 a:hover {
+  color: #8cae35;
+}
+
+/* Price */
+
+.purelane-product-card__price {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 15px;
+}
+
+.purelane-product-card__current-price {
+  color: #073f39;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.purelane-product-card__price s {
+  color: #8a9693;
+  font-size: 13px;
+}
+
+/* Shop Button */
+
+.purelane-product-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 17px;
+  border-radius: 999px;
+  background: #006c65;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.purelane-product-card__button:hover {
+  background: #073f39;
+  transform: translateY(-2px);
+}
+
+/* Unavailable */
+
+.purelane-product-card__unavailable {
+  color: #8a9693;
+  font-size: 13px;
+}
+
+/* Empty State */
+
+.purelane-shop__empty {
+  padding: 60px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  color: #55716c;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media screen and (max-width: 1000px) {
+  .purelane-shop__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .purelane-shop {
+    padding: 60px 5%;
+  }
+
+  .purelane-shop__header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .purelane-shop__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .purelane-product-card__image {
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .purelane-shop__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .purelane-shop__header h2 {
+    font-size: 42px;
+  }
+}
+/* =========================================================
+   PURELANE — BEST SELLING COMBOS
+   ========================================================= */
+
+.purelane-combos {
+  position: relative;
+  padding: 80px 0;
+  background: var(--combos-bg);
+  color: var(--combos-text);
+  overflow: hidden;
+}
+
+.purelane-combos__container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.purelane-combos__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+.purelane-combos__eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--combos-accent);
+}
+
+.purelane-combos__heading {
+  margin: 12px 0 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: clamp(32px, 4.6vw, 54px);
+  line-height: .94;
+  letter-spacing: -.018em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--combos-text);
+}
+
+.purelane-combos__rule {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  max-width: 270px;
+  margin: 20px auto 0;
+}
+
+.purelane-combos__rule span:first-child,
+.purelane-combos__rule span:last-child {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(236, 230, 247, .4),
+    transparent
+  );
+}
+
+.purelane-combos__rule span:last-child {
+  transform: rotate(180deg);
+}
+
+.purelane-combos__leaf {
+  color: var(--combos-accent);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.purelane-combos__description {
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: rgba(236, 230, 247, .74);
+  font-size: clamp(15px, 1.35vw, 17.5px);
+  line-height: 1.6;
+}
+
+
+/* =========================
+   HORIZONTAL RAIL
+   ========================= */
+
+.purelane-combos__rail {
+  display: flex;
+
+  /* Responsive spacing between cards */
+  gap: clamp(16px, 2vw, 24px);
+
+  /* Center cards when they fit */
+  justify-content: safe center;
+
+  /* Horizontal scrolling when cards don't fit */
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  margin: 0 -18px;
+  padding: 4px 18px 18px;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.purelane-combos__rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   CARD
+   ========================= */
+
+.purelane-combo-card {
+  position: relative;
+
+  flex: 0 0 302px;
+
+  display: flex;
+  flex-direction: column;
+
+  scroll-snap-align: start;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      158deg,
+      rgba(236, 230, 247, .15),
+      rgba(75, 58, 143, .20) 58%,
+      rgba(23, 16, 43, .28)
+    );
+
+  border: 1px solid rgba(236, 230, 247, .22);
+
+  box-shadow:
+    0 26px 74px rgba(18, 12, 34, .44),
+    inset 0 1px 0 rgba(255, 255, 255, .24);
+
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+
+  transition:
+    transform .4s cubic-bezier(.2, .7, .2, 1),
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+.purelane-combo-card:hover {
+  transform: translateY(-5px);
+}
+
+.purelane-combo-card--highlight {
+  border-color: rgba(240, 160, 60, .44);
+
+  box-shadow:
+    0 26px 74px rgba(18, 12, 34, .44),
+    0 0 0 1px rgba(240, 160, 60, .2),
+    inset 0 1px 0 rgba(255, 255, 255, .24);
+}
+
+
+/* =========================
+   PRODUCT TRAY
+   ========================= */
+
+.purelane-combo-card__tray {
+  position: relative;
+
+  padding: 14px 14px 13px;
+
+  border-bottom: 1px solid rgba(236, 230, 247, .13);
+
+  background:
+    linear-gradient(
+      162deg,
+      rgba(236, 230, 247, .13),
+      rgba(75, 58, 143, .10)
+    );
+}
+
+
+/* =========================
+   LABELS
+   ========================= */
+
+.purelane-combo-card__saving {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  padding: 5px 11px;
+
+  border-radius: 999px;
+
+  background: rgba(3, 30, 28, .72);
+
+  border: 1px solid rgba(240, 160, 60, .34);
+
+  color: var(--combos-accent);
+
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.purelane-combo-card__badge {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c9761d,
+      #5d8d1c
+    );
+
+  color: #08211a;
+
+  font-size: 8.6px;
+  font-weight: 800;
+
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   PRODUCT ROW
+   ========================= */
+
+.purelane-combo-card__products {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.purelane-combo-card__product {
+  flex: 1 1 0;
+  min-width: 0;
+
+  text-align: center;
+}
+
+.purelane-combo-card__product img {
+  display: block;
+
+  width: auto;
+  height: 66px;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  margin: 0 auto 8px;
+
+  filter:
+    drop-shadow(
+      0 8px 13px rgba(1, 24, 22, .5)
+    );
+}
+
+.purelane-combo-card__product > span {
+  display: block;
+
+  font-size: 8.6px;
+  line-height: 1.32;
+
+  color: rgba(236, 230, 247, .74);
+
+  font-weight: 600;
+}
+
+.purelane-combo-card__plus {
+  flex: 0 0 9px;
+
+  padding-bottom: 30px;
+
+  text-align: center;
+
+  color: var(--combos-accent);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   NO IMAGE
+   ========================= */
+
+.purelane-combo-card__placeholder {
+  width: 60px;
+  height: 66px;
+
+  margin: 0 auto 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  border: 1px dashed rgba(236, 230, 247, .26);
+
+  background: rgba(236, 230, 247, .08);
+
+  color: rgba(236, 230, 247, .55);
+
+  font-size: 8px;
+}
+
+
+/* =========================
+   CARD BODY
+   ========================= */
+
+.purelane-combo-card__body {
+  padding: 15px 16px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.purelane-combo-card__body h3 {
+  margin: 0;
+
+  font-family: 'Outfit', system-ui, sans-serif;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -.005em;
+
+  text-transform: uppercase;
+
+  color: #faf7fd;
+}
+
+.purelane-combo-card__count {
+  margin-top: 6px;
+
+  color: rgba(236, 230, 247, .5);
+
+  font-size: 10.5px;
+  font-weight: 700;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+}
+
+.purelane-combo-card__description {
+  flex: 1;
+
+  margin: 11px 0 14px;
+
+  color: rgba(236, 230, 247, .74);
+
+  font-size: 12.4px;
+  line-height: 1.55;
+}
+
+
+/* =========================
+   PRICE
+   ========================= */
+
+.purelane-combo-card__price {
+  display: flex;
+  align-items: baseline;
+
+  gap: 9px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 6px;
+}
+
+.purelane-combo-card__price strong {
+  font-family: 'Outfit', system-ui, sans-serif;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -.02em;
+
+  color: #faf7fd;
+}
+
+.purelane-combo-card__price s {
+  color: rgba(236, 230, 247, .5);
+
+  font-size: 13px;
+}
+
+.purelane-combo-card__price em {
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  background: rgba(240, 160, 60, .18);
+
+  border: 1px solid rgba(240, 160, 60, .36);
+
+  color: var(--combos-accent);
+
+  font-size: 9.5px;
+  font-weight: 800;
+
+  font-style: normal;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   FINE PRINT
+   ========================= */
+
+.purelane-combo-card__fine {
+  margin-bottom: 14px;
+
+  color: rgba(236, 230, 247, .5);
+
+  font-size: 10.4px;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.purelane-combo-card__button {
+  width: 100%;
+
+  min-height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(236, 230, 247, .30);
+
+  background: rgba(236, 230, 247, .10);
+
+  color: #faf7fd;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    border-color .35s ease;
+}
+
+.purelane-combo-card__button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(236, 230, 247, .18);
+}
+
+.purelane-combo-card__button--primary {
+  background:
+    linear-gradient(
+      135deg,
+      #c9761d,
+      #5d8d1c
+    );
+
+  border-color: transparent;
+
+  color: #08211a;
+}
+
+.purelane-combo-card__button--primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #d88727,
+      #6b9c24
+    );
+}
+
+
+/* =========================
+   SWIPE HINT
+   ========================= */
+
+.purelane-combos__swipe-hint {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 2px;
+
+  color: rgba(236, 230, 247, .5);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+}
+
+.purelane-combos__swipe-hint span {
+  color: var(--combos-accent);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   NOTE
+   ========================= */
+
+.purelane-combos__note {
+  max-width: 62ch;
+
+  margin: 14px auto 0;
+
+  text-align: center;
+
+  color: rgba(236, 230, 247, .5);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media screen and (max-width: 760px) {
+
+  .purelane-combos {
+    padding: 65px 0;
+  }
+
+  .purelane-combo-card {
+    flex-basis: 290px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 600px) {
+
+  .purelane-combos {
+    padding: 55px 0;
+  }
+
+  .purelane-combos__heading {
+    font-size: 34px;
+  }
+
+  .purelane-combos__description {
+    font-size: 15px;
+  }
+
+  .purelane-combo-card {
+    flex-basis: 285px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .purelane-combo-card {
+    transition: none;
+  }
+
+  .purelane-combo-card:hover {
+    transform: none;
+  }
+
+  .purelane-combo-card__button {
+    transition: none;
+  }
+
+}

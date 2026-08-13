@@ -1,0 +1,151 @@
+{{ 'purelane.css' | asset_url | stylesheet_tag }}
+
+<section class="purelane-shop" id="shop">
+  <div class="purelane-shop__container">
+
+    <div class="purelane-shop__header">
+      <div>
+        <p class="purelane-shop__eyebrow">SHOP PURELANE</p>
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+
+      {% if section.settings.collection != blank %}
+        <a
+          href="{{ section.settings.collection.url }}"
+          class="purelane-shop__view-all"
+        >
+          View all →
+        </a>
+      {% endif %}
+    </div>
+
+    {% assign shop_collection = section.settings.collection %}
+
+    {% if shop_collection != blank and shop_collection.products_count > 0 %}
+
+      <div class="purelane-shop__grid">
+
+        {% for product in shop_collection.products limit: section.settings.products_to_show %}
+
+          <article class="purelane-product-card">
+
+            <a
+              href="{{ product.url }}"
+              class="purelane-product-card__image"
+              aria-label="View {{ product.title | escape }}"
+            >
+
+              {% if product.featured_image %}
+                {{
+                  product.featured_image
+                  | image_url: width: 800
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '300,500,700,800',
+                    sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw',
+                    alt: product.featured_image.alt | default: product.title
+                }}
+              {% else %}
+                <div class="purelane-product-card__placeholder">
+                  <span>No image</span>
+                </div>
+              {% endif %}
+
+              {% unless product.available %}
+                <span class="purelane-product-card__sold-out">
+                  Sold out
+                </span>
+              {% endunless %}
+
+            </a>
+
+            <div class="purelane-product-card__info">
+
+              <h3>
+                <a href="{{ product.url }}">
+                  {{ product.title }}
+                </a>
+              </h3>
+
+              <div class="purelane-product-card__price">
+
+                {% if product.compare_at_price > product.price %}
+                  <span class="purelane-product-card__current-price">
+                    {{ product.price | money }}
+                  </span>
+
+                  <s>
+                    {{ product.compare_at_price | money }}
+                  </s>
+                {% else %}
+                  <span class="purelane-product-card__current-price">
+                    {{ product.price | money }}
+                  </span>
+                {% endif %}
+
+              </div>
+
+              {% if product.available %}
+                <a
+                  href="{{ product.url }}"
+                  class="purelane-product-card__button"
+                >
+                  Shop now →
+                </a>
+              {% else %}
+                <span class="purelane-product-card__unavailable">
+                  Currently unavailable
+                </span>
+              {% endif %}
+
+            </div>
+
+          </article>
+
+        {% endfor %}
+
+      </div>
+
+    {% else %}
+
+      <div class="purelane-shop__empty">
+        <p>Select a collection in the section settings.</p>
+      </div>
+
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purelane Shop",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop our essentials"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Product collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane Shop"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,570 @@
+{{ 'purelane.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="purelane-combos"
+  id="combos"
+  style="
+    --combos-bg: {{ section.settings.background_color }};
+    --combos-text: {{ section.settings.text_color }};
+    --combos-accent: {{ section.settings.accent_color }};
+  "
+>
+  <div class="purelane-combos__container">
+
+    <div class="purelane-combos__header">
+
+      {% if section.settings.eyebrow != blank %}
+        <span class="purelane-combos__eyebrow">
+          {{ section.settings.eyebrow }}
+        </span>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="purelane-combos__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      <div class="purelane-combos__rule" aria-hidden="true">
+        <span></span>
+        <span class="purelane-combos__leaf">✦</span>
+        <span></span>
+      </div>
+
+      {% if section.settings.description != blank %}
+        <p class="purelane-combos__description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+    </div>
+
+
+    <div
+      class="purelane-combos__rail"
+      role="region"
+      aria-label="Best selling combos"
+    >
+
+      {% for block in section.blocks %}
+
+        {% assign product_count = 0 %}
+
+        {% if block.settings.product_1 != blank %}
+          {% assign product_count = product_count | plus: 1 %}
+        {% endif %}
+
+        {% if block.settings.product_2 != blank %}
+          {% assign product_count = product_count | plus: 1 %}
+        {% endif %}
+
+        {% if block.settings.product_3 != blank %}
+          {% assign product_count = product_count | plus: 1 %}
+        {% endif %}
+
+
+        {% assign savings = block.settings.compare_price
+          | minus: block.settings.bundle_price
+        %}
+
+
+        <article
+          class="
+            purelane-combo-card
+            {% if block.settings.highlight %}
+              purelane-combo-card--highlight
+            {% endif %}
+          "
+          {{ block.shopify_attributes }}
+        >
+
+          <!-- =========================
+               PRODUCT PREVIEW
+          ========================== -->
+
+          <div class="purelane-combo-card__tray">
+
+            {% if block.settings.saving_label != blank %}
+              <span class="purelane-combo-card__saving">
+                {{ block.settings.saving_label }}
+              </span>
+            {% endif %}
+
+
+            {% if block.settings.badge != blank %}
+              <span class="purelane-combo-card__badge">
+                {{ block.settings.badge }}
+              </span>
+            {% endif %}
+
+
+            <div class="purelane-combo-card__products">
+
+              {% if block.settings.product_1 != blank %}
+
+                <div class="purelane-combo-card__product">
+
+                  {% if block.settings.product_1.featured_image %}
+                    {{
+                      block.settings.product_1.featured_image
+                      | image_url: width: 300
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '120,180,240,300',
+                        sizes: '90px',
+                        alt: block.settings.product_1.title
+                    }}
+                  {% else %}
+                    <div class="purelane-combo-card__placeholder">
+                      <span>No image</span>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.product_1_label != blank %}
+                    <span>
+                      {{ block.settings.product_1_label }}
+                    </span>
+                  {% endif %}
+
+                </div>
+
+              {% endif %}
+
+
+              {% if block.settings.product_1 != blank
+                and block.settings.product_2 != blank
+              %}
+                <span
+                  class="purelane-combo-card__plus"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              {% endif %}
+
+
+              {% if block.settings.product_2 != blank %}
+
+                <div class="purelane-combo-card__product">
+
+                  {% if block.settings.product_2.featured_image %}
+                    {{
+                      block.settings.product_2.featured_image
+                      | image_url: width: 300
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '120,180,240,300',
+                        sizes: '90px',
+                        alt: block.settings.product_2.title
+                    }}
+                  {% else %}
+                    <div class="purelane-combo-card__placeholder">
+                      <span>No image</span>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.product_2_label != blank %}
+                    <span>
+                      {{ block.settings.product_2_label }}
+                    </span>
+                  {% endif %}
+
+                </div>
+
+              {% endif %}
+
+
+              {% if block.settings.product_2 != blank
+                and block.settings.product_3 != blank
+              %}
+                <span
+                  class="purelane-combo-card__plus"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              {% endif %}
+
+
+              {% if block.settings.product_3 != blank %}
+
+                <div class="purelane-combo-card__product">
+
+                  {% if block.settings.product_3.featured_image %}
+                    {{
+                      block.settings.product_3.featured_image
+                      | image_url: width: 300
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '120,180,240,300',
+                        sizes: '90px',
+                        alt: block.settings.product_3.title
+                    }}
+                  {% else %}
+                    <div class="purelane-combo-card__placeholder">
+                      <span>No image</span>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.product_3_label != blank %}
+                    <span>
+                      {{ block.settings.product_3_label }}
+                    </span>
+                  {% endif %}
+
+                </div>
+
+              {% endif %}
+
+            </div>
+
+          </div>
+
+
+          <!-- =========================
+               COMBO INFORMATION
+          ========================== -->
+
+          <div class="purelane-combo-card__body">
+
+            {% if block.settings.title != blank %}
+              <h3>
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+
+            {% if block.settings.count_label != blank %}
+              <div class="purelane-combo-card__count">
+                {{ block.settings.count_label }}
+              </div>
+            {% elsif product_count > 0 %}
+              <div class="purelane-combo-card__count">
+                {{ product_count }} products
+              </div>
+            {% endif %}
+
+
+            {% if block.settings.description != blank %}
+              <p class="purelane-combo-card__description">
+                {{ block.settings.description }}
+              </p>
+            {% endif %}
+
+
+            <div class="purelane-combo-card__price">
+
+              <strong>
+                {{ block.settings.bundle_price | times: 100 | money }}
+              </strong>
+
+              {% if block.settings.compare_price > block.settings.bundle_price %}
+                <s>
+                  {{ block.settings.compare_price | times: 100 | money }}
+                </s>
+              {% endif %}
+
+              {% if savings > 0 %}
+                <em>
+                  Save {{ savings | times: 100 | money }}
+                </em>
+              {% endif %}
+
+            </div>
+
+
+            {% if block.settings.fine_print != blank %}
+              <div class="purelane-combo-card__fine">
+                {{ block.settings.fine_print }}
+              </div>
+            {% endif %}
+
+
+            {% if block.settings.button_label != blank %}
+
+              <a
+                href="{{ block.settings.button_link | default: routes.all_products_collection_url }}"
+                class="
+                  purelane-combo-card__button
+                  {% if block.settings.highlight %}
+                    purelane-combo-card__button--primary
+                  {% endif %}
+                "
+              >
+                {{ block.settings.button_label }}
+                <span aria-hidden="true">→</span>
+              </a>
+
+            {% endif %}
+
+          </div>
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+
+    {% if section.settings.show_swipe_hint %}
+
+      <div class="purelane-combos__swipe-hint">
+        <span aria-hidden="true">→</span>
+        Swipe for more combos
+      </div>
+
+    {% endif %}
+
+
+    {% if section.settings.bottom_note != blank %}
+
+      <p class="purelane-combos__note">
+        {{ section.settings.bottom_note }}
+      </p>
+
+    {% endif %}
+
+  </div>
+</section>
+
+
+{% schema %}
+
+{
+  "name": "Purelane Combos",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Pre-built to save you money"
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best selling combos"
+    },
+
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own."
+    },
+
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#17102b"
+    },
+
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#faf7fd"
+    },
+
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#f0a03c"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_swipe_hint",
+      "label": "Show swipe hint",
+      "default": true
+    },
+
+    {
+      "type": "textarea",
+      "id": "bottom_note",
+      "label": "Bottom note",
+      "default": "Choose your combo and continue shopping. Products can still be changed before checkout."
+    }
+
+  ],
+
+  "blocks": [
+
+    {
+      "type": "combo",
+      "name": "Combo",
+
+      "settings": [
+
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Combo title",
+          "default": "Kitchen essentials"
+        },
+
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Most popular"
+        },
+
+        {
+          "type": "text",
+          "id": "saving_label",
+          "label": "Saving label",
+          "default": "You save"
+        },
+
+        {
+          "type": "checkbox",
+          "id": "highlight",
+          "label": "Highlight this combo",
+          "default": false
+        },
+
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product 1"
+        },
+
+        {
+          "type": "text",
+          "id": "product_1_label",
+          "label": "Product 1 benefit",
+          "default": "Cuts grease instantly"
+        },
+
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product 2"
+        },
+
+        {
+          "type": "text",
+          "id": "product_2_label",
+          "label": "Product 2 benefit",
+          "default": "Squeaky clean dishes"
+        },
+
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product 3"
+        },
+
+        {
+          "type": "text",
+          "id": "product_3_label",
+          "label": "Product 3 benefit",
+          "default": "Melts hard water stains"
+        },
+
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Combo description",
+          "default": "Everything you need for a sparkling home, packed into one simple box."
+        },
+
+        {
+          "type": "text",
+          "id": "count_label",
+          "label": "Product count",
+          "default": "3 products"
+        },
+
+        {
+          "type": "number",
+          "id": "bundle_price",
+          "label": "Combo price",
+          "default": 499
+        },
+
+        {
+          "type": "number",
+          "id": "compare_price",
+          "label": "Compare-at total",
+          "default": 897
+        },
+
+        {
+          "type": "text",
+          "id": "fine_print",
+          "label": "Fine print",
+          "default": "Inclusive of all taxes · COD available"
+        },
+
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop bundle"
+        },
+
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+
+      ]
+    }
+
+  ],
+
+  "presets": [
+
+    {
+      "name": "Purelane Combos",
+
+      "blocks": [
+        {
+          "type": "combo"
+        },
+        {
+          "type": "combo"
+        },
+        {
+          "type": "combo",
+          "settings": {
+            "title": "Complete home bundle",
+            "badge": "Best value",
+            "saving_label": "Biggest saving",
+            "highlight": true,
+            "count_label": "5 products",
+            "bundle_price": 799,
+            "compare_price": 1495
+          }
+        },
+        {
+          "type": "combo"
+        },
+        {
+          "type": "combo",
+          "settings": {
+            "title": "Hard water solution kit",
+            "badge": "",
+            "saving_label": "You save",
+            "count_label": "2 products",
+            "bundle_price": 349,
+            "compare_price": 598
+          }
+        }
+      ]
+
+    }
+
+  ]
+
+}
+
+{% endschema %}
