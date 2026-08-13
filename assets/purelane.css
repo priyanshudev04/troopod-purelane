@@ -3069,3 +3069,16 @@
   }
 
 }
+.purelane-header__cart .svg-wrapper {
+  width: 20px !important;
+  height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purelane-header__cart .svg-wrapper svg {
+  width: 20px !important;
+  height: 20px !important;
+  display: block;
+}

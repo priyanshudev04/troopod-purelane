@@ -38,19 +38,9 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-left",
-        "mobile_logo_position": "center",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "margin_bottom": 0
       }
     },
     "purelane_hero_nYcqRE": {
@@ -234,6 +224,64 @@
         "description": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
       }
     },
+    "purelane_ingredients_DKjQpz": {
+      "type": "purelane-ingredients",
+      "blocks": {
+        "ingredient_JhQRnp": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_014749.png",
+            "title": "Coconut",
+            "description": "Plant-derived cleansers that lift grease"
+          }
+        },
+        "ingredient_JLrzBW": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_014840.png",
+            "title": "Orange peel",
+            "description": "Natural degreaser and fresh citrus lift"
+          }
+        },
+        "ingredient_EhbTWj": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_015012.png",
+            "title": "Soap nut",
+            "description": "A traditional plant foaming agent"
+          }
+        },
+        "ingredient_yUgEen": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_015038.png",
+            "title": "Neem",
+            "description": "Time-tested antibacterial from the tree"
+          }
+        },
+        "ingredient_DaEpBE": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_015122.png",
+            "title": "Lemongrass",
+            "description": "Clean fragrance with nothing synthetic"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_JhQRnp",
+        "ingredient_JLrzBW",
+        "ingredient_EhbTWj",
+        "ingredient_yUgEen",
+        "ingredient_DaEpBE"
+      ],
+      "name": "Purelane Ingredients",
+      "settings": {
+        "eyebrow": "WHAT'S INSIDE",
+        "heading": "Sourced from nature",
+        "description": "Plant-derived ingredients chosen to clean effectively without the harsh stuff."
+      }
+    },
     "purelane_reviews_phjAkQ": {
       "type": "purelane-reviews",
       "blocks": {
@@ -297,6 +345,16 @@
         "review_count": "from 8,000+ reviews",
         "homes_text": "Loved by 12 lakh+ homes"
       }
+    },
+    "purelane_sticky_cta_GzCUNL": {
+      "type": "purelane-sticky-cta",
+      "name": "Purelane Sticky CTA",
+      "settings": {
+        "heading": "Pick any 3, pay ₹499",
+        "subheading": "Free shipping, always",
+        "button_label": "Build bundle",
+        "button_link": ""
+      }
     }
   },
   "order": [
@@ -306,6 +364,8 @@
     "purelane_shop_xtzA4i",
     "purelane_combos_7n9XbV",
     "purelane_bundles_4Xfi4q",
+    "purelane_ingredients_DKjQpz",
+    "purelane_sticky_cta_GzCUNL",
     "purelane_reviews_phjAkQ"
   ]
 }
