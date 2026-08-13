@@ -1,0 +1,347 @@
+{{ 'purelane.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="purelane-bundles"
+  id="bundles"
+>
+  <div class="purelane-bundles__container">
+
+    <div class="purelane-bundles__intro">
+      <span class="purelane-bundles__eyebrow">
+        {{ section.settings.eyebrow }}
+      </span>
+
+      <h2>
+        {{ section.settings.heading }}
+      </h2>
+
+      {% if section.settings.description != blank %}
+        <p>
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="purelane-bundles__grid">
+
+      {% for block in section.blocks %}
+
+        <article
+          class="
+            purelane-bundle
+            {% if block.settings.featured %}
+              purelane-bundle--featured
+            {% endif %}
+          "
+          {{ block.shopify_attributes }}
+        >
+
+          <div class="purelane-bundle__top">
+
+            {% if block.settings.tag != blank %}
+              <span class="purelane-bundle__tag">
+                {{ block.settings.tag }}
+              </span>
+            {% endif %}
+
+            {% assign selected_products = block.settings.products %}
+
+            {% if selected_products != blank %}
+
+              <div
+                class="
+                  purelane-bundle__products
+                  {% if selected_products.size >= 5 %}
+                    purelane-bundle__products--five
+                  {% endif %}
+                "
+              >
+
+                {% for product in selected_products limit: 5 %}
+
+                  <div class="purelane-bundle__product">
+
+                    {% if product.featured_image %}
+                      {{
+                        product.featured_image
+                        | image_url: width: 220
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '120,160,220',
+                          sizes: '80px',
+                          alt: product.featured_image.alt | default: product.title
+                      }}
+                    {% else %}
+                      <div class="purelane-bundle__product-placeholder">
+                        <span>No image</span>
+                      </div>
+                    {% endif %}
+
+                    <span>
+                      {{ product.title | truncate: 28 }}
+                    </span>
+
+                  </div>
+
+                  {% unless forloop.last %}
+                    <span
+                      class="purelane-bundle__plus"
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  {% endunless %}
+
+                {% endfor %}
+
+              </div>
+
+            {% else %}
+
+              <div class="purelane-bundle__empty-products">
+                Select products
+              </div>
+
+            {% endif %}
+
+          </div>
+
+          <div class="purelane-bundle__body">
+
+            <h3>
+              {{ block.settings.title }}
+            </h3>
+
+            {% if selected_products != blank %}
+              <div class="purelane-bundle__count">
+                {{ selected_products.size }} products
+              </div>
+            {% endif %}
+
+            {% if block.settings.description != blank %}
+              <p class="purelane-bundle__description">
+                {{ block.settings.description }}
+              </p>
+            {% endif %}
+
+            <div class="purelane-bundle__price">
+
+              {% if block.settings.bundle_price != blank %}
+                <strong>
+                  {{ block.settings.bundle_price }}
+                </strong>
+              {% endif %}
+
+              {% if block.settings.compare_price != blank %}
+                <s>
+                  {{ block.settings.compare_price }}
+                </s>
+              {% endif %}
+
+            </div>
+
+            {% if block.settings.price_note != blank %}
+              <p class="purelane-bundle__price-note">
+                {{ block.settings.price_note }}
+              </p>
+            {% endif %}
+
+            {% if block.settings.benefits != blank %}
+
+              <ul class="purelane-bundle__benefits">
+
+                {% assign benefits = block.settings.benefits | newline_to_br | split: '<br />' %}
+
+                {% for benefit in benefits %}
+
+                  {% assign clean_benefit = benefit | strip %}
+
+                  {% if clean_benefit != blank %}
+
+                    <li>
+                      <span aria-hidden="true">✓</span>
+                      {{ clean_benefit }}
+                    </li>
+
+                  {% endif %}
+
+                {% endfor %}
+
+              </ul>
+
+            {% endif %}
+
+            {% if block.settings.button_label != blank %}
+
+              <a
+                href="{{ block.settings.button_link | default: routes.all_products_collection_url }}"
+                class="
+                  purelane-bundle__button
+                  {% if block.settings.featured %}
+                    purelane-bundle__button--primary
+                  {% endif %}
+                "
+              >
+                {{ block.settings.button_label }}
+
+                <span aria-hidden="true">
+                  →
+                </span>
+              </a>
+
+            {% endif %}
+
+          </div>
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purelane Bundles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "BUILD YOUR BUNDLE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One box. Every room."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bundle",
+      "name": "Bundle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Starter"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bundle title",
+          "default": "Starter box"
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Products",
+          "limit": 5
+        },
+        {
+          "type": "text",
+          "id": "bundle_price",
+          "label": "Bundle price",
+          "default": "₹349"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Compare-at price",
+          "default": "₹598"
+        },
+        {
+          "type": "text",
+          "id": "price_note",
+          "label": "Price note",
+          "default": "Flat ₹174 per product"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Bundle description",
+          "default": "Pick any two products and save compared with buying separately."
+        },
+        {
+          "type": "textarea",
+          "id": "benefits",
+          "label": "Benefits",
+          "info": "Enter one benefit per line.",
+          "default": "Pick any two products\nFree shipping across India"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Build this box"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured bundle",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane Bundles",
+      "blocks": [
+        {
+          "type": "bundle",
+          "settings": {
+            "tag": "Starter",
+            "title": "Starter box",
+            "bundle_price": "₹349",
+            "compare_price": "₹598",
+            "price_note": "Flat ₹174 per product",
+            "description": "Pick any two products and save compared with buying separately.",
+            "benefits": "Pick any two products\nFree shipping across India"
+          }
+        },
+        {
+          "type": "bundle",
+          "settings": {
+            "tag": "Most popular",
+            "title": "Everyday essentials",
+            "bundle_price": "₹499",
+            "compare_price": "₹897",
+            "price_note": "Flat ₹166 per product",
+            "description": "Three everyday cleaning essentials packed into one box.",
+            "benefits": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
+            "featured": true
+          }
+        },
+        {
+          "type": "bundle",
+          "settings": {
+            "tag": "Whole home",
+            "title": "Complete home box",
+            "bundle_price": "₹799",
+            "compare_price": "₹1495",
+            "price_note": "Flat ₹160 per product",
+            "description": "Everything you need for a cleaner, fresher home.",
+            "benefits": "Pick any five products\nEvery room in one order\nFree shipping across India"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
