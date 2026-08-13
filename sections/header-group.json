@@ -14,16 +14,40 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
+        "announcement_w8qxTX": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "FREE SHIPPING ON EVERY BUNDLE ACROSS INDIA",
+            "link": ""
+          }
+        },
+        "announcement_ceRitQ": {
+          "type": "announcement",
+          "settings": {
+            "text": "100% PLANT-BASED AND NON-TOXIC",
+            "link": ""
+          }
+        },
+        "announcement_ztBDG4": {
+          "type": "announcement",
+          "settings": {
+            "text": "LOVED BY 30,000+ HAPPY HOMES",
+            "link": ""
+          }
+        },
+        "announcement_VAVrkh": {
+          "type": "announcement",
+          "settings": {
+            "text": "BUY 3 AT FLAT ₹499",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement_w8qxTX",
+        "announcement_ceRitQ",
+        "announcement_ztBDG4",
+        "announcement_VAVrkh"
       ],
       "settings": {
         "auto_rotate": false,
@@ -51,13 +75,126 @@
         "description": "Plant-powered cleaning that works without the harsh chemicals."
       }
     },
-    "purelane_shop_xtzA4i": {
-      "type": "purelane-shop",
-      "name": "Purelane Shop",
+    "purelane_reviews_phjAkQ": {
+      "type": "purelane-reviews",
+      "blocks": {
+        "review_X3ELER": {
+          "type": "review",
+          "settings": {
+            "title": "Works like a charm",
+            "review": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better.",
+            "name": "Anita",
+            "product": "Laundry detergent"
+          }
+        },
+        "review_MAaQD8": {
+          "type": "review",
+          "settings": {
+            "title": "Best dishwash ever",
+            "review": "Our old dishwash left my hands with dry, cracked skin. That stopped completely after we switched.",
+            "name": "Priya",
+            "product": "Dishwash gel"
+          }
+        },
+        "review_HPtR6W": {
+          "type": "review",
+          "settings": {
+            "title": "Great product, great packaging",
+            "review": "Very soft on hands with a lovely fragrance, and it feels good to be using far less plastic.",
+            "name": "Sunita",
+            "product": "Liquid handwash"
+          }
+        },
+        "review_rJ9JEi": {
+          "type": "review",
+          "settings": {
+            "title": "Dog friendly",
+            "review": "We switched because chemical floor cleaners were setting off my dog's allergies. No reactions since.",
+            "name": "Rohit S.",
+            "product": "Floor cleaner"
+          }
+        },
+        "review_nKkYUE": {
+          "type": "review",
+          "settings": {
+            "title": "Sparkling taps again",
+            "review": "Hard water had ruined our bathroom fittings. Two sprays and the scale wipes straight off, no scrubbing.",
+            "name": "Verified buyer",
+            "product": "Tap cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "review_X3ELER",
+        "review_MAaQD8",
+        "review_HPtR6W",
+        "review_rJ9JEi",
+        "review_nKkYUE"
+      ],
+      "name": "Purelane Reviews",
       "settings": {
-        "heading": "Shop our essentials",
-        "collection": "shop-all",
-        "products_to_show": 8
+        "eyebrow": "THAT'S WHAT THEY SAID",
+        "rating": "4.8",
+        "review_count": "from 8,000+ reviews",
+        "homes_text": "Loved by 12 lakh+ homes"
+      }
+    },
+    "purelane_ingredients_DKjQpz": {
+      "type": "purelane-ingredients",
+      "blocks": {
+        "ingredient_JhQRnp": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_014749.png",
+            "title": "Coconut",
+            "description": "Plant-derived cleansers that lift grease"
+          }
+        },
+        "ingredient_JLrzBW": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_014840.png",
+            "title": "Orange peel",
+            "description": "Natural degreaser and fresh citrus lift"
+          }
+        },
+        "ingredient_EhbTWj": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_015012.png",
+            "title": "Soap nut",
+            "description": "A traditional plant foaming agent"
+          }
+        },
+        "ingredient_yUgEen": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_015038.png",
+            "title": "Neem",
+            "description": "Time-tested antibacterial from the tree"
+          }
+        },
+        "ingredient_DaEpBE": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-14_015122.png",
+            "title": "Lemongrass",
+            "description": "Clean fragrance with nothing synthetic"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_JhQRnp",
+        "ingredient_JLrzBW",
+        "ingredient_EhbTWj",
+        "ingredient_yUgEen",
+        "ingredient_DaEpBE"
+      ],
+      "name": "Purelane Ingredients",
+      "settings": {
+        "eyebrow": "WHAT'S INSIDE",
+        "heading": "Sourced from nature",
+        "description": "Plant-derived ingredients chosen to clean effectively without the harsh stuff."
       }
     },
     "purelane_combos_7n9XbV": {
@@ -224,126 +361,13 @@
         "description": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
       }
     },
-    "purelane_ingredients_DKjQpz": {
-      "type": "purelane-ingredients",
-      "blocks": {
-        "ingredient_JhQRnp": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-08-14_014749.png",
-            "title": "Coconut",
-            "description": "Plant-derived cleansers that lift grease"
-          }
-        },
-        "ingredient_JLrzBW": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-08-14_014840.png",
-            "title": "Orange peel",
-            "description": "Natural degreaser and fresh citrus lift"
-          }
-        },
-        "ingredient_EhbTWj": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-08-14_015012.png",
-            "title": "Soap nut",
-            "description": "A traditional plant foaming agent"
-          }
-        },
-        "ingredient_yUgEen": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-08-14_015038.png",
-            "title": "Neem",
-            "description": "Time-tested antibacterial from the tree"
-          }
-        },
-        "ingredient_DaEpBE": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-08-14_015122.png",
-            "title": "Lemongrass",
-            "description": "Clean fragrance with nothing synthetic"
-          }
-        }
-      },
-      "block_order": [
-        "ingredient_JhQRnp",
-        "ingredient_JLrzBW",
-        "ingredient_EhbTWj",
-        "ingredient_yUgEen",
-        "ingredient_DaEpBE"
-      ],
-      "name": "Purelane Ingredients",
+    "purelane_shop_xtzA4i": {
+      "type": "purelane-shop",
+      "name": "Purelane Shop",
       "settings": {
-        "eyebrow": "WHAT'S INSIDE",
-        "heading": "Sourced from nature",
-        "description": "Plant-derived ingredients chosen to clean effectively without the harsh stuff."
-      }
-    },
-    "purelane_reviews_phjAkQ": {
-      "type": "purelane-reviews",
-      "blocks": {
-        "review_X3ELER": {
-          "type": "review",
-          "settings": {
-            "title": "Works like a charm",
-            "review": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better.",
-            "name": "Anita",
-            "product": "Laundry detergent"
-          }
-        },
-        "review_MAaQD8": {
-          "type": "review",
-          "settings": {
-            "title": "Best dishwash ever",
-            "review": "Our old dishwash left my hands with dry, cracked skin. That stopped completely after we switched.",
-            "name": "Priya",
-            "product": "Dishwash gel"
-          }
-        },
-        "review_HPtR6W": {
-          "type": "review",
-          "settings": {
-            "title": "Great product, great packaging",
-            "review": "Very soft on hands with a lovely fragrance, and it feels good to be using far less plastic.",
-            "name": "Sunita",
-            "product": "Liquid handwash"
-          }
-        },
-        "review_rJ9JEi": {
-          "type": "review",
-          "settings": {
-            "title": "Dog friendly",
-            "review": "We switched because chemical floor cleaners were setting off my dog's allergies. No reactions since.",
-            "name": "Rohit S.",
-            "product": "Floor cleaner"
-          }
-        },
-        "review_nKkYUE": {
-          "type": "review",
-          "settings": {
-            "title": "Sparkling taps again",
-            "review": "Hard water had ruined our bathroom fittings. Two sprays and the scale wipes straight off, no scrubbing.",
-            "name": "Verified buyer",
-            "product": "Tap cleaner"
-          }
-        }
-      },
-      "block_order": [
-        "review_X3ELER",
-        "review_MAaQD8",
-        "review_HPtR6W",
-        "review_rJ9JEi",
-        "review_nKkYUE"
-      ],
-      "name": "Purelane Reviews",
-      "settings": {
-        "eyebrow": "THAT'S WHAT THEY SAID",
-        "rating": "4.8",
-        "review_count": "from 8,000+ reviews",
-        "homes_text": "Loved by 12 lakh+ homes"
+        "heading": "Shop our essentials",
+        "collection": "shop-all",
+        "products_to_show": 8
       }
     },
     "purelane_sticky_cta_pPAxTM": {
@@ -371,11 +395,11 @@
     "announcement-bar",
     "header",
     "purelane_hero_nYcqRE",
-    "purelane_shop_xtzA4i",
+    "purelane_reviews_phjAkQ",
+    "purelane_ingredients_DKjQpz",
     "purelane_combos_7n9XbV",
     "purelane_bundles_4Xfi4q",
-    "purelane_ingredients_DKjQpz",
-    "purelane_reviews_phjAkQ",
+    "purelane_shop_xtzA4i",
     "purelane_sticky_cta_pPAxTM",
     "purelane_coupon_ccqRmE"
   ]

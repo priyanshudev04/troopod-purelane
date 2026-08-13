@@ -1,221 +1,546 @@
-.purelane-hero {
-  position: relative;
-  overflow: hidden;
-  background: #f4f1e8;
-  color: #073f39;
-  padding: 80px 6%;
+
+/* =========================================================
+   PURELANE HERO V2 — FINAL
+   ========================================================= */
+
+:root {
+--p-kbtl: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgMTE3NyIgd2lkdGg9IjM4MCIgaGVpZ2h0PSIxMTc3Ij4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzZiNTViOCIgc3RvcC1vcGFjaXR5PSIuOTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2YjU1YjgiIHN0b3Atb3BhY2l0eT0iLjYyIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB4PSIxNDkuOSIgeT0iMCIgd2lkdGg9IjgwLjEiIGhlaWdodD0iMTE3LjciIHJ4PSIxNy42IiBmaWxsPSIjNmI1NWI4IiBvcGFjaXR5PSIuODUiLz4KPHJlY3QgeD0iMTYxLjIiIHk9IjEwNS45IiB3aWR0aD0iNTcuNyIgaGVpZ2h0PSI4Mi40IiBmaWxsPSIjNmI1NWI4IiBvcGFjaXR5PSIuNyIvPgo8cmVjdCB4PSI3Mi4yIiB5PSIyMzUuNCIgd2lkdGg9IjIzNS42IiBoZWlnaHQ9Ijk0MS42IiByeD0iMzcuNyIgZmlsbD0idXJsKCNnKSIvPgo8cmVjdCB4PSIxMDAuNSIgeT0iNTE3LjkiIHdpZHRoPSIxNzkuMSIgaGVpZ2h0PSIzMjAuMSIgcng9IjExLjgiIGZpbGw9IiNmYWY3ZmQiIG9wYWNpdHk9Ii44OCIvPgo8cmVjdCB4PSIxMjguNyIgeT0iNjEyLjAiIHdpZHRoPSIxMjIuNSIgaGVpZ2h0PSI0Mi40IiByeD0iMiIgZmlsbD0iIzZiNTViOCIgb3BhY2l0eT0iLjU1Ii8+CjxyZWN0IHg9IjE0Mi45IiB5PSI2OTYuOCIgd2lkdGg9Ijk0LjIiIGhlaWdodD0iMzMuMCIgcng9IjIiIGZpbGw9IiM2YjU1YjgiIG9wYWNpdHk9Ii4zNSIvPgo8L3N2Zz4=");
+  --p-tbtl: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgMTE4MCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSIxMTgwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzdhNjJjMiIgc3RvcC1vcGFjaXR5PSIuOTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3YTYyYzIiIHN0b3Atb3BhY2l0eT0iLjYyIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB4PSIxNDkuOSIgeT0iMCIgd2lkdGg9IjgwLjEiIGhlaWdodD0iMTE4LjAiIHJ4PSIxNy42IiBmaWxsPSIjN2E2MmMyIiBvcGFjaXR5PSIuODUiLz4KPHJlY3QgeD0iMTYxLjIiIHk9IjEwNi4yIiB3aWR0aD0iNTcuNyIgaGVpZ2h0PSI4Mi42IiBmaWxsPSIjN2E2MmMyIiBvcGFjaXR5PSIuNyIvPgo8cmVjdCB4PSI3Mi4yIiB5PSIyMzYuMCIgd2lkdGg9IjIzNS42IiBoZWlnaHQ9Ijk0NC4wIiByeD0iMzcuNyIgZmlsbD0idXJsKCNnKSIvPgo8cmVjdCB4PSIxMDAuNSIgeT0iNTE5LjIiIHdpZHRoPSIxNzkuMSIgaGVpZ2h0PSIzMjEuMCIgcng9IjExLjgiIGZpbGw9IiNmYWY3ZmQiIG9wYWNpdHk9Ii44OCIvPgo8cmVjdCB4PSIxMjguNyIgeT0iNjEzLjYiIHdpZHRoPSIxMjIuNSIgaGVpZ2h0PSI0Mi41IiByeD0iMiIgZmlsbD0iIzdhNjJjMiIgb3BhY2l0eT0iLjU1Ii8+CjxyZWN0IHg9IjE0Mi45IiB5PSI2OTguNiIgd2lkdGg9Ijk0LjIiIGhlaWdodD0iMzMuMCIgcng9IjIiIGZpbGw9IiM3YTYyYzIiIG9wYWNpdHk9Ii4zNSIvPgo8L3N2Zz4=");
+  --p-mbtl: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMTA1NCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSIxMDU0Ij4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVhNDZhMyIgc3RvcC1vcGFjaXR5PSIuOTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1YTQ2YTMiIHN0b3Atb3BhY2l0eT0iLjYyIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB4PSIxNDIuMSIgeT0iMCIgd2lkdGg9Ijc1LjkiIGhlaWdodD0iMTA1LjQiIHJ4PSIxNi43IiBmaWxsPSIjNWE0NmEzIiBvcGFjaXR5PSIuODUiLz4KPHJlY3QgeD0iMTUyLjciIHk9Ijk0LjkiIHdpZHRoPSI1NC42IiBoZWlnaHQ9IjczLjgiIGZpbGw9IiM1YTQ2YTMiIG9wYWNpdHk9Ii43Ii8+CjxyZWN0IHg9IjY4LjQiIHk9IjIxMC44IiB3aWR0aD0iMjIzLjIiIGhlaWdodD0iODQzLjIiIHJ4PSIzNS43IiBmaWxsPSJ1cmwoI2cpIi8+CjxyZWN0IHg9Ijk1LjIiIHk9IjQ2My44IiB3aWR0aD0iMTY5LjYiIGhlaWdodD0iMjg2LjciIHJ4PSIxMS4yIiBmaWxsPSIjZmFmN2ZkIiBvcGFjaXR5PSIuODgiLz4KPHJlY3QgeD0iMTIyLjAiIHk9IjU0OC4xIiB3aWR0aD0iMTE2LjEiIGhlaWdodD0iMzcuOSIgcng9IjIiIGZpbGw9IiM1YTQ2YTMiIG9wYWNpdHk9Ii41NSIvPgo8cmVjdCB4PSIxMzUuNCIgeT0iNjI0LjAiIHdpZHRoPSI4OS4zIiBoZWlnaHQ9IjI5LjUiIHJ4PSIyIiBmaWxsPSIjNWE0NmEzIiBvcGFjaXR5PSIuMzUiLz4KPC9zdmc+");
 }
 
-.purelane-hero__grid {
-  max-width: 1400px;
+.purelane-hero-v2 {
+  --hero-ink: #17102d;
+  --hero-muted: #55536c;
+  --hero-orange: #c77717;
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 76% 48%,
+      rgba(169,225,188,.68) 0%,
+      rgba(213,241,220,.55) 30%,
+      rgba(245,250,246,.85) 62%,
+      #fff 100%
+    );
+  color: var(--hero-ink);
+}
+
+.purelane-hero-v2__waves {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.purelane-hero-v2__waves span {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 180px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255,255,255,.52);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  filter: blur(1px);
+  transition: transform .5s ease;
+}
+
+.purelane-hero-v2__waves span:nth-child(1) {
+  top: 24%;
+  transform: rotate(-2deg) translate3d(var(--wave-x,0px),var(--wave-y,0px),0);
+}
+.purelane-hero-v2__waves span:nth-child(2) {
+  top: 48%;
+  height: 220px;
+  transform: rotate(1deg) translate3d(var(--wave-x,0px),var(--wave-y,0px),0);
+}
+.purelane-hero-v2__waves span:nth-child(3) {
+  top: 68%;
+  height: 160px;
+  transform: rotate(-1deg) translate3d(var(--wave-x,0px),var(--wave-y,0px),0);
+}
+
+.purelane-hero-v2__container {
+  position: relative;
+  z-index: 3;
+  width: min(1220px,calc(100% - 70px));
+  min-height: 100svh;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 180px 1fr 1fr;
+  grid-template-columns: minmax(390px,.78fr) minmax(520px,1.22fr);
   align-items: center;
-  gap: 50px;
-  min-height: 620px;
+  gap: 30px;
+  padding-top: 110px;
+  padding-bottom: 35px;
 }
 
-.purelane-hero__badges {
+.purelane-hero-v2__content {
+  position: relative;
+  z-index: 5;
+  max-width: 500px;
+  padding-bottom: 20px;
+}
+
+.purelane-hero-v2__title {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  font-family: "Outfit",Inter,system-ui,sans-serif;
+  font-size: clamp(76px,7vw,108px);
+  line-height: .87;
+  letter-spacing: -5px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
-.purelane-hero__badge {
+.purelane-hero-v2__title span { display: block; }
+.purelane-hero-v2__title .accent { color: var(--hero-orange); }
+
+.purelane-hero-v2__rule {
+  width: 265px;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px;
-  background: rgba(255,255,255,.65);
-  border: 1px solid rgba(7,63,57,.12);
-  border-radius: 14px;
-  font-size: 13px;
-  line-height: 1.25;
+  margin: 28px 0 22px;
+  color: var(--hero-orange);
 }
-
-.purelane-hero__badge-icon {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #e4ebd5;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.purelane-hero__content h1 {
-  margin: 0;
-  font-size: clamp(60px, 7vw, 105px);
-  line-height: .88;
-  letter-spacing: -4px;
-  font-weight: 500;
-}
-
-.purelane-hero__content h1 span {
-  color: #8cae35;
-}
-
-.purelane-hero__rule {
-  width: 180px;
+.purelane-hero-v2__rule span {
   height: 1px;
-  margin: 30px 0;
-  background: #8cae35;
+  flex: 1;
+  background: linear-gradient(90deg,rgba(88,91,113,.35),transparent);
+}
+.purelane-hero-v2__rule span:last-child {
+  background: linear-gradient(90deg,transparent,rgba(88,91,113,.35));
+}
+.purelane-hero-v2__rule svg { width: 15px; height: 15px; flex: 0 0 auto; }
+
+.purelane-hero-v2__description {
+  max-width: 475px;
+  margin: 0;
+  color: var(--hero-muted);
+  font-size: 17px;
+  line-height: 1.58;
 }
 
-.purelane-hero__content p {
-  max-width: 520px;
-  margin: 0 0 28px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #45645f;
-}
-
-.purelane-hero__actions {
+.purelane-hero-v2__actions {
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.purelane-hero__button {
+.purelane-hero-v2__button {
+  min-height: 45px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  gap: 12px;
+  padding: 0 23px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 14px;
-  transition: .25s ease;
-}
-
-.purelane-hero__button--primary {
-  background: #006c65;
-  color: white;
-}
-
-.purelane-hero__button--secondary {
-  border: 1px solid #006c65;
-  color: #006c65;
-  background: transparent;
-}
-
-.purelane-hero__button:hover {
-  transform: translateY(-2px);
-}
-
-.purelane-hero__mini-badges {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.purelane-hero__mini-badges span {
-  padding: 9px 13px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.65);
   font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  transition: transform .3s ease,box-shadow .3s ease,background .3s ease;
+}
+.purelane-hero-v2__button--primary {
+  background: #007d72;
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(0,125,114,.20);
+}
+.purelane-hero-v2__button--primary span {
+  font-size: 17px;
+  transition: transform .3s ease;
+}
+.purelane-hero-v2__button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0,125,114,.28);
+}
+.purelane-hero-v2__button--primary:hover span { transform: translateX(4px); }
+.purelane-hero-v2__button--secondary {
+  color: #515166;
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(100,102,130,.25);
+  backdrop-filter: blur(10px);
+}
+.purelane-hero-v2__button--secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.85);
 }
 
-.purelane-hero__product {
-  min-height: 520px;
+.purelane-hero-v2__product-area {
   position: relative;
+  min-height: 650px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  border-radius: 30px;
-  background:
-    radial-gradient(circle at 50% 20%, #ffffff 0, #dce9df 32%, #9bb9aa 70%, #47756b 100%);
+  isolation: isolate;
 }
 
-.purelane-hero__product::before {
-  content: "PURELANE";
+.purelane-hero-v2__product-glow {
   position: absolute;
-  top: 20%;
+  width: 570px;
+  height: 570px;
   left: 50%;
-  transform: translateX(-50%);
-  font-size: 70px;
-  font-weight: 700;
-  color: rgba(255,255,255,.45);
-  letter-spacing: 8px;
+  top: 48%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,rgba(157,216,172,.65) 0%,rgba(157,216,172,.25) 38%,transparent 72%);
+  filter: blur(14px);
+  z-index: -1;
 }
 
-.purelane-hero__offer {
+.purelane-hero-v2__stage {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translate3d(var(--mouse-x,0px),var(--mouse-y,0px),0);
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+}
+
+.purelane-hero-v2__slide {
   position: absolute;
-  right: 25px;
-  bottom: 25px;
-  padding: 18px 22px;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .75s ease;
+}
+.purelane-hero-v2__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.purelane-hero-v2__bottle {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  filter: drop-shadow(0 28px 38px rgba(45,36,87,.28));
+  opacity: 0;
+  transform: translateY(35px) scale(.94);
+  transition: opacity .75s ease,transform .8s cubic-bezier(.2,.7,.2,1);
+  will-change: transform,opacity;
+}
+.purelane-hero-v2__slide.is-active .purelane-hero-v2__bottle {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.bottle-kitchen { background-image: var(--p-kbtl); aspect-ratio: .3229; }
+.bottle-tap { background-image: var(--p-tbtl); aspect-ratio: .322; }
+.bottle-metal { background-image: var(--p-mbtl); aspect-ratio: .3416; }
+
+/* 1 bottle */
+.purelane-hero-v2__slide:nth-child(1) .bottle-a {
+  height: 94%;
+  z-index: 3;
+  transition-delay: .05s;
+}
+
+/* 2 bottles */
+.purelane-hero-v2__slide:nth-child(2) .bottle-a {
+  height: 78%;
+  margin-right: -75px;
+  z-index: 1;
+  transition-delay: .05s;
+}
+.purelane-hero-v2__slide:nth-child(2) .bottle-b {
+  height: 96%;
+  z-index: 3;
+  transition-delay: .25s;
+}
+
+/* 3 bottles */
+.purelane-hero-v2__slide:nth-child(3) .bottle-a {
+  height: 74%;
+  margin-right: -75px;
+  z-index: 1;
+}
+.purelane-hero-v2__slide:nth-child(3) .bottle-b {
+  height: 97%;
+  z-index: 3;
+  transition-delay: .25s;
+}
+.purelane-hero-v2__slide:nth-child(3) .bottle-c {
+  height: 76%;
+  margin-left: -70px;
+  z-index: 2;
+  transition-delay: .45s;
+}
+
+/* Offer card */
+.purelane-hero-v2__offer {
+  position: absolute;
+  left: 4%;
+  bottom: 5%;
+  z-index: 10;
+  min-width: 130px;
+  padding: 12px 15px;
   border-radius: 16px;
-  background: rgba(255,255,255,.82);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.74);
+  border: 1px solid rgba(255,255,255,.78);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  box-shadow: 0 16px 35px rgba(52,69,65,.14);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity .6s ease .25s,transform .6s ease .25s;
+}
+.purelane-hero-v2__slide.is-active .purelane-hero-v2__offer {
+  opacity: 1;
+  transform: translateY(0);
+}
+.offer-label {
+  display: block;
+  color: var(--hero-orange);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.offer-price {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 4px;
+}
+.offer-price strong {
+  color: #252037;
+  font-size: 22px;
+  font-weight: 900;
+}
+.offer-price s { color: #92909e; font-size: 10px; }
+.offer-save {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(199,119,23,.10);
+  color: var(--hero-orange);
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+/* Trust card */
+.purelane-hero-v2__trust-card {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 92px;
+  padding: 14px 9px;
+  border-radius: 18px;
+  background: linear-gradient(180deg,rgba(255,255,255,.78),rgba(245,247,250,.68));
+  border: 1px solid rgba(255,255,255,.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 45px rgba(40,62,55,.14);
+}
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+.trust-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(96,120,105,.15);
+  color: #6b9b39;
+  font-size: 14px;
+}
+.trust-item strong,
+.trust-item span { display: block; }
+.trust-item strong { color: #545168; font-size: 7px; letter-spacing: .1em; }
+.trust-item span { color: #69677a; font-size: 6.5px; font-weight: 700; letter-spacing: .05em; }
+.trust-divider {
+  height: 1px;
+  width: 100%;
+  margin: 12px 0;
+  background: rgba(92,103,122,.16);
+}
+
+/* Manual selector — replaces passive dots */
+.purelane-hero-v2__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 11.5%;
+  right: auto;
+  top: auto;
+  transform: translateX(-50%);
+  z-index: 30;
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  box-shadow: 0 15px 35px rgba(0,0,0,.12);
+  gap: 7px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.56);
+  border: 1px solid rgba(255,255,255,.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 30px rgba(50,70,60,.12);
 }
-
-.purelane-hero__offer span {
-  width: 100%;
-  font-size: 12px;
-  color: #55716c;
+.purelane-hero-v2__dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(105,125,142,.32);
+  cursor: pointer;
+  transition: width .3s ease,height .3s ease,background .3s ease,transform .3s ease;
 }
-
-.purelane-hero__offer strong {
-  font-size: 24px;
+.purelane-hero-v2__dots button.is-active {
+  width: 30px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--hero-orange);
 }
+.purelane-hero-v2__dots button:hover { transform: scale(1.08); }
 
-.purelane-hero__offer s {
-  color: #8a9693;
-}
-
-.purelane-hero__offer small {
-  padding: 5px 8px;
-  border-radius: 6px;
-  background: #e4ebd5;
-  color: #4f7d10;
-  font-weight: 600;
-}
-
-@media screen and (max-width: 900px) {
-  .purelane-hero {
-    padding: 50px 5%;
-  }
-
-  .purelane-hero__grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .purelane-hero__badges {
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .purelane-hero__badge {
-    min-width: 150px;
-  }
-
-  .purelane-hero__product {
-    min-height: 400px;
+@media (min-width:901px) {
+  .purelane-hero-v2__stage:hover .purelane-hero-v2__bottle {
+    filter: drop-shadow(0 34px 48px rgba(45,36,87,.34));
   }
 }
 
-@media screen and (max-width: 600px) {
-  .purelane-hero__content h1 {
-    font-size: 58px;
-    letter-spacing: -2px;
+@media (max-width:1100px) {
+  .purelane-hero-v2__container {
+    width: min(100% - 40px,1100px);
+    grid-template-columns: minmax(340px,.85fr) minmax(430px,1.15fr);
+    gap: 0;
   }
+  .purelane-hero-v2__title { font-size: clamp(65px,8vw,90px); }
+  .purelane-hero-v2__product-area { min-height: 560px; }
+  .purelane-hero-v2__stage { height: 550px; }
+  .purelane-hero-v2__trust-card { right: -5px; }
+}
 
-  .purelane-hero__content p {
-    font-size: 16px;
+@media (max-width:900px) {
+  .purelane-hero-v2 { min-height: auto; }
+  .purelane-hero-v2__container {
+    width: calc(100% - 32px);
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+    padding-top: 105px;
+    padding-bottom: 85px;
   }
-
-  .purelane-hero__mini-badges {
-    display: none;
+  .purelane-hero-v2__content { max-width: 100%; text-align: left; }
+  .purelane-hero-v2__title {
+    font-size: clamp(58px,17vw,86px);
+    letter-spacing: -3px;
+  }
+  .purelane-hero-v2__description { font-size: 15px; max-width: 450px; }
+  .purelane-hero-v2__actions { margin-top: 22px; }
+  .purelane-hero-v2__product-area { min-height: 470px; width: 100%; }
+  .purelane-hero-v2__stage { height: 460px; width: 100%; }
+  .purelane-hero-v2__slide:nth-child(1) .bottle-a { height: 94%; }
+  .purelane-hero-v2__slide:nth-child(2) .bottle-a { height: 76%; margin-right: -45px; }
+  .purelane-hero-v2__slide:nth-child(2) .bottle-b { height: 92%; }
+  .purelane-hero-v2__slide:nth-child(3) .bottle-a { height: 70%; margin-right: -45px; }
+  .purelane-hero-v2__slide:nth-child(3) .bottle-b { height: 92%; }
+  .purelane-hero-v2__slide:nth-child(3) .bottle-c { height: 72%; margin-left: -42px; }
+  .purelane-hero-v2__trust-card {
+    right: -2px;
+    width: 78px;
+    padding: 10px 7px;
+    border-radius: 15px;
+  }
+  .trust-icon { width: 29px; height: 29px; font-size: 12px; }
+  .trust-divider { margin: 9px 0; }
+  .purelane-hero-v2__offer {
+    left: 0;
+    bottom: 3%;
+    min-width: 115px;
+    padding: 10px 12px;
+  }
+  .purelane-hero-v2__dots {
+    bottom: 8%;
   }
 }
+
+@media (max-width:600px) {
+  .purelane-hero-v2__container { padding-top: 90px; }
+  .purelane-hero-v2__title {
+    font-size: clamp(52px,16vw,72px);
+    line-height: .9;
+  }
+  .purelane-hero-v2__rule {
+    width: 190px;
+    margin-top: 22px;
+    margin-bottom: 18px;
+  }
+  .purelane-hero-v2__description { font-size: 14px; line-height: 1.55; }
+  .purelane-hero-v2__actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .purelane-hero-v2__button {
+    width: 100%;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+  .purelane-hero-v2__product-area { min-height: 390px; }
+  .purelane-hero-v2__stage { height: 390px; }
+  .purelane-hero-v2__trust-card {
+    right: -2px;
+    width: 67px;
+    padding: 8px 5px;
+  }
+  .trust-item strong { font-size: 5.5px; }
+  .trust-item span { font-size: 5.2px; }
+  .trust-icon { width: 25px; height: 25px; font-size: 10px; }
+  .purelane-hero-v2__offer {
+    transform: scale(.9);
+    transform-origin: bottom left;
+  }
+  .purelane-hero-v2__dots {
+    bottom: 7%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .purelane-hero-v2__stage,
+  .purelane-hero-v2__bottle,
+  .purelane-hero-v2__offer,
+  .purelane-hero-v2__slide,
+  .purelane-hero-v2__dots button {
+    transition: none !important;
+  }
+  .purelane-hero-v2__stage { transform: none !important; }
+}
+
+/* =========================================================
+   END HERO V2
+   ========================================================= */
+/* =========================================================
+   END HERO V2
+   ========================================================= */
+
 /* =========================
    PURELANE SHOP SECTION
    ========================= */
@@ -1566,17 +1891,51 @@
 
 }
 /* =========================================================
-   PURELANE REVIEWS
+   PURELANE REVIEWS — GREEN WAVY BACKGROUND
    ========================================================= */
 
 .purelane-reviews {
-  padding: 75px 0 85px;
-  background: #f4f1e8;
-  color: #073f39;
+  position: relative;
   overflow: hidden;
+  padding: 75px 0 85px;
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(238,255,242,.94) 0%,
+      rgba(214,244,222,.82) 42%,
+      rgba(183,225,198,.94) 100%
+    );
+  color: #073f39;
+}
+
+/* Same soft Purelane waves used behind the Ingredients section */
+.purelane-reviews::before,
+.purelane-reviews::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  width: 116%;
+  height: 190px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255,255,255,.58);
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  pointer-events: none;
+  filter: blur(.4px);
+}
+
+.purelane-reviews::before {
+  top: 18%;
+  transform: rotate(-2deg);
+}
+
+.purelane-reviews::after {
+  bottom: 10%;
+  transform: rotate(2deg);
 }
 
 .purelane-reviews__container {
+  position: relative;
+  z-index: 2;
   width: min(1180px, 100%);
   margin: 0 auto;
   padding: 0 6%;
@@ -1590,16 +1949,13 @@
   justify-content: center;
   gap: 10px 22px;
   flex-wrap: wrap;
-
   margin-bottom: 22px;
   text-align: center;
 }
 
 .purelane-reviews__eyebrow {
   width: 100%;
-
   color: #7a9c1e;
-
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .18em;
@@ -1610,7 +1966,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 18px;
   flex-wrap: wrap;
 }
@@ -1619,26 +1974,21 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-
   color: #45645f;
-
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: .1em;
   text-transform: uppercase;
 }
 
 .purelane-reviews__stat strong {
   color: #006c65;
-
   font-size: 17px;
   letter-spacing: 0;
 }
 
 .purelane-reviews__stars {
   color: #7a9c1e;
-
   font-size: 12px;
   letter-spacing: .16em;
 }
@@ -1647,7 +1997,6 @@
 
 .purelane-reviews__rail {
   position: relative;
-
   width: 100%;
   overflow: hidden;
 
@@ -1673,9 +2022,7 @@
 .purelane-reviews__track {
   display: flex;
   gap: 12px;
-
   width: max-content;
-
   animation:
     purelane-review-marquee 52s linear infinite;
 }
@@ -1689,22 +2036,24 @@
 
 .purelane-review {
   flex: 0 0 284px;
-
   padding: 20px 19px;
-
   border-radius: 18px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.88),
-      rgba(236,241,235,.92)
+      rgba(255,255,255,.82),
+      rgba(236,246,239,.74)
     );
 
-  border: 1px solid rgba(7,63,57,.12);
+  border: 1px solid rgba(255,255,255,.72);
 
   box-shadow:
-    0 12px 30px rgba(7,63,57,.08);
+    0 12px 30px rgba(7,63,57,.09),
+    inset 0 1px 0 rgba(255,255,255,.75);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   min-height: 170px;
 
@@ -1714,35 +2063,26 @@
 
 .purelane-review__stars {
   color: #7a9c1e;
-
   font-size: 11px;
   letter-spacing: .18em;
-
   margin-bottom: 10px;
 }
 
 .purelane-review h3 {
   margin: 0 0 8px;
-
   color: #073f39;
-
   font-size: 13px;
   line-height: 1.2;
-
   font-weight: 800;
-
   letter-spacing: .04em;
   text-transform: uppercase;
 }
 
 .purelane-review p {
   margin: 0 0 14px;
-
   color: #45645f;
-
   font-size: 12.6px;
   line-height: 1.52;
-
   flex: 1;
 }
 
@@ -1750,12 +2090,9 @@
   display: flex;
   align-items: center;
   gap: 7px;
-
   color: #8a9693;
-
   font-size: 9.5px;
   font-weight: 700;
-
   letter-spacing: .1em;
   text-transform: uppercase;
 }
@@ -1767,16 +2104,11 @@
 .purelane-review__verified {
   display: inline-grid;
   place-items: center;
-
   width: 16px;
   height: 16px;
-
   border-radius: 50%;
-
   background: #e4ebd5;
-
   color: #4f7d10;
-
   font-size: 10px;
   font-weight: 800;
 }
@@ -1785,15 +2117,11 @@
 
 .purelane-reviews__empty {
   max-width: 600px;
-
   margin: 30px auto 0;
   padding: 30px;
-
   text-align: center;
-
   border: 1px dashed rgba(7,63,57,.2);
   border-radius: 14px;
-
   color: #45645f;
 }
 
@@ -1845,9 +2173,7 @@
 
   .purelane-review {
     flex-basis: 250px;
-
     min-height: 165px;
-
     padding: 17px 15px;
   }
 
@@ -1866,6 +2192,7 @@
   }
 
 }
+
 /* =========================================================
    MOBILE POLISH
    ========================================================= */
@@ -2604,235 +2931,298 @@
   }
 }
 /* =========================================================
-   PURELANE INGREDIENTS
+   PURELANE INGREDIENTS — PIXEL ACCURATE V2
    ========================================================= */
 
 .purelane-ingredients {
   position: relative;
-  background: #f4f1e8;
-  color: #073f39;
-  padding: 80px 6%;
+  overflow: hidden;
+  padding: 70px 0 82px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(238,255,242,.94) 0%, rgba(214,244,222,.82) 42%, rgba(183,225,198,.94) 100%);
+  color: #17102d;
+}
+
+.purelane-ingredients::before,
+.purelane-ingredients::after {
+  content: "";
+  position: absolute;
+  left: -8%;
+  width: 116%;
+  height: 190px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255,255,255,.58);
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  pointer-events: none;
+  filter: blur(.4px);
+}
+
+.purelane-ingredients::before {
+  top: 9%;
+  transform: rotate(-2deg);
+}
+
+.purelane-ingredients::after {
+  bottom: 7%;
+  transform: rotate(2deg);
 }
 
 .purelane-ingredients__container {
-  max-width: 1400px;
+  position: relative;
+  z-index: 2;
+  width: min(1145px, calc(100% - 44px));
   margin: 0 auto;
+  padding: 38px 48px 44px;
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 25px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.78),
+      rgba(241,250,247,.58) 48%,
+      rgba(223,244,233,.54)
+    );
+  box-shadow:
+    0 24px 70px rgba(53,88,73,.10),
+    inset 0 1px 0 rgba(255,255,255,.85);
+  backdrop-filter: blur(20px) saturate(125%);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
 }
-
 
 /* ---------- HEADER ---------- */
 
 .purelane-ingredients__header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 48px;
+  max-width: 900px;
+  margin: 0 auto 42px;
 }
 
 .purelane-ingredients__eyebrow {
-  display: inline-block;
-  margin-bottom: 12px;
-
-  color: #8cae35;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .14em;
+  display: block;
+  margin: 0 0 12px;
+  color: #7b9e22;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .20em;
   text-transform: uppercase;
 }
 
 .purelane-ingredients__header h2 {
   margin: 0;
-
-  color: #073f39;
-  font-size: clamp(42px, 5vw, 68px);
+  color: #17102d;
+  font-family: "Outfit", Inter, system-ui, sans-serif;
+  font-size: clamp(42px, 4.1vw, 58px);
   line-height: .95;
-  letter-spacing: -2.5px;
-  font-weight: 500;
+  letter-spacing: -2.2px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.purelane-ingredients__header h2::after {
+  content: "⌁";
+  display: block;
+  width: 180px;
+  height: 20px;
+  margin: 13px auto 0;
+  color: #c77717;
+  font-size: 19px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 72px;
+  border-top: 1px solid rgba(94,112,126,.25);
 }
 
 .purelane-ingredients__header p {
-  max-width: 600px;
-  margin: 18px auto 0;
-
-  color: #55716c;
-  font-size: 16px;
-  line-height: 1.6;
+  max-width: 650px;
+  margin: 12px auto 0;
+  color: #617c79;
+  font-size: 14px;
+  line-height: 1.5;
 }
-
 
 /* ---------- INGREDIENT GRID ---------- */
 
 .purelane-ingredients__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
-
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: stretch;
+  gap: 0;
 }
 
-
-/* ---------- INGREDIENT CARD ---------- */
+/* ---------- INGREDIENT ITEM ---------- */
 
 .purelane-ingredient {
+  position: relative;
   min-width: 0;
-  padding: 24px 18px 26px;
-
+  padding: 10px 22px 8px;
   text-align: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform .3s ease;
+}
 
-  background: rgba(255, 255, 255, .58);
-  border: 1px solid rgba(7, 63, 57, .12);
-  border-radius: 22px;
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    border-color .25s ease;
+.purelane-ingredient:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 4px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(82,111,113,.16) 20%,
+    rgba(82,111,113,.16) 80%,
+    transparent
+  );
 }
 
 .purelane-ingredient:hover {
-  transform: translateY(-5px);
-
-  border-color: rgba(0, 108, 101, .24);
-
-  box-shadow:
-    0 16px 35px rgba(7, 63, 57, .10);
+  transform: translateY(-3px);
+  box-shadow: none;
 }
-
 
 /* ---------- ICON / IMAGE ---------- */
 
 .purelane-ingredient__icon {
-  width: 120px;
-  height: 120px;
-
-  margin: 0 auto 20px;
-
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 17px;
   display: grid;
   place-items: center;
-
-  overflow: hidden;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 35% 28%,
-      #ffffff 0,
-      #e4ebd5 52%,
-      #c9d8bb 100%
-    );
-
-  border: 1px solid rgba(7, 63, 57, .10);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
 }
 
 .purelane-ingredient__icon img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
+  width: 72px;
+  height: 72px;
   display: block;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  mix-blend-mode: multiply;
+  transition: transform .3s ease;
+}
+
+.purelane-ingredient:hover .purelane-ingredient__icon img {
+  transform: scale(1.04);
 }
 
 .purelane-ingredient__fallback {
-  color: #8cae35;
-  font-size: 34px;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  color: #147873;
+  font-size: 30px;
   line-height: 1;
 }
-
 
 /* ---------- TEXT ---------- */
 
 .purelane-ingredient h3 {
-  margin: 0 0 9px;
-
-  color: #073f39;
-
-  font-size: 19px;
-  line-height: 1.2;
-  font-weight: 600;
+  margin: 0 0 8px;
+  color: #17102d;
+  font-family: "Outfit", Inter, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: .10em;
+  text-transform: uppercase;
 }
 
 .purelane-ingredient p {
-  max-width: 190px;
+  max-width: 175px;
   margin: 0 auto;
-
-  color: #55716c;
-
-  font-size: 13px;
-  line-height: 1.55;
+  color: #647c7b;
+  font-size: 11px;
+  line-height: 1.42;
 }
-
 
 /* ---------- EMPTY STATE ---------- */
 
 .purelane-ingredients__empty {
-  padding: 50px 20px;
-
+  padding: 45px 20px;
   text-align: center;
-
-  border: 1px dashed rgba(7, 63, 57, .20);
-  border-radius: 20px;
-
+  border: 1px dashed rgba(7,63,57,.20);
+  border-radius: 18px;
   color: #55716c;
 }
 
-
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ---------- TABLET ---------- */
 
 @media screen and (max-width: 1050px) {
-
   .purelane-ingredients {
-    padding: 65px 5%;
+    padding: 60px 0 70px;
   }
 
-  .purelane-ingredients__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  .purelane-ingredients__container {
+    width: min(94%, 900px);
+    padding: 34px 28px 38px;
   }
 
+  .purelane-ingredient {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .purelane-ingredient p {
+    font-size: 10px;
+  }
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* ---------- MOBILE ---------- */
 
 @media screen and (max-width: 700px) {
-
   .purelane-ingredients {
-    padding: 55px 5%;
+    padding: 45px 0 55px;
+  }
+
+  .purelane-ingredients__container {
+    width: calc(100% - 24px);
+    padding: 30px 18px 34px;
+    border-radius: 21px;
   }
 
   .purelane-ingredients__header {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+  }
+
+  .purelane-ingredients__eyebrow {
+    font-size: 9px;
   }
 
   .purelane-ingredients__header h2 {
-    font-size: clamp(40px, 12vw, 54px);
-    letter-spacing: -2px;
+    font-size: clamp(34px, 10vw, 48px);
+    letter-spacing: -1.7px;
+  }
+
+  .purelane-ingredients__header h2::after {
+    width: 130px;
+    margin-top: 11px;
+    letter-spacing: 50px;
   }
 
   .purelane-ingredients__header p {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .purelane-ingredients__grid {
     display: flex;
-    gap: 14px;
-
+    gap: 0;
     overflow-x: auto;
     overflow-y: hidden;
-
-    padding: 4px 2px 16px;
-
+    padding: 4px 0 8px;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
     scrollbar-width: none;
     -ms-overflow-style: none;
-
     -webkit-overflow-scrolling: touch;
   }
 
@@ -2841,48 +3231,46 @@
   }
 
   .purelane-ingredient {
-    flex: 0 0 235px;
-
+    flex: 0 0 175px;
+    padding: 8px 18px;
     scroll-snap-align: start;
   }
 
+  .purelane-ingredient:not(:first-child)::before {
+    top: 8px;
+    bottom: 8px;
+  }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+/* ---------- SMALL MOBILE ---------- */
 
 @media screen and (max-width: 380px) {
-
-  .purelane-ingredients {
-    padding-left: 18px;
-    padding-right: 18px;
+  .purelane-ingredients__container {
+    width: calc(100% - 16px);
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .purelane-ingredient {
-    flex-basis: 220px;
+    flex-basis: 165px;
   }
 
-  .purelane-ingredient__icon {
-    width: 105px;
-    height: 105px;
+  .purelane-ingredient__icon,
+  .purelane-ingredient__icon img {
+    width: 66px;
+    height: 66px;
   }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+/* ---------- REDUCED MOTION ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-
-  .purelane-ingredient {
+  .purelane-ingredient,
+  .purelane-ingredient__icon img {
     transition: none;
   }
-
 }
+
 /* =========================================================
    PURELANE STICKY CTA
    ========================================================= */
@@ -3081,4 +3469,918 @@
   width: 20px !important;
   height: 20px !important;
   display: block;
+}
+
+
+/* =========================================================
+   PURELANE — CONTINUOUS GREEN PAGE BACKGROUND
+   Keep the green atmosphere while removing hard section cuts
+   ========================================================= */
+
+html,
+body {
+  background:
+    radial-gradient(
+      ellipse at 50% 15%,
+      #f3fff6 0%,
+      #e3f7e8 34%,
+      #c9ecd3 68%,
+      #b5dfc3 100%
+    ) !important;
+}
+
+/* Let the same green canvas flow behind the sections */
+.purelane-hero-v2,
+.purelane-reviews,
+.purelane-ingredients {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep the green atmospheric wave treatment */
+.purelane-hero-v2::after,
+.purelane-reviews::after,
+.purelane-ingredients::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -8%;
+  width: 116%;
+  height: 210px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255,255,255,.58);
+  border-bottom: 1px solid rgba(255,255,255,.22);
+  pointer-events: none;
+  filter: blur(.45px);
+}
+
+.purelane-hero-v2::after {
+  bottom: -75px;
+  transform: rotate(-2deg);
+}
+
+.purelane-reviews::after {
+  bottom: -75px;
+  transform: rotate(2deg);
+}
+
+.purelane-ingredients::after {
+  bottom: -75px;
+  transform: rotate(-2deg);
+}
+
+/* Preserve the soft green transition between content areas */
+.purelane-reviews {
+  padding-top: 55px;
+  padding-bottom: 75px;
+}
+
+.purelane-ingredients {
+  padding-top: 55px;
+}
+
+
+/* =========================================================
+   PURELANE SHOP — CONTINUOUS GREEN CANVAS
+   Products sit directly on the shared page background.
+   ========================================================= */
+
+.purelane-shop {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  /* Remove the old beige block */
+  background: transparent !important;
+
+  color: #073f39;
+  padding: 85px 6% 95px;
+
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Soft atmospheric wave behind the products */
+.purelane-shop::before,
+.purelane-shop::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -8%;
+  width: 116%;
+  height: 220px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(.45px);
+}
+
+.purelane-shop::before {
+  top: 18%;
+  border-top: 1px solid rgba(255,255,255,.52);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  transform: rotate(-2deg);
+}
+
+.purelane-shop::after {
+  bottom: 8%;
+  border-top: 1px solid rgba(255,255,255,.38);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  transform: rotate(2deg);
+}
+
+/* Make the shop header feel like it belongs to the same canvas */
+.purelane-shop__header {
+  position: relative;
+  z-index: 2;
+}
+
+/* Product grid stays clean and open on the shared background */
+.purelane-shop__grid {
+  position: relative;
+  z-index: 2;
+}
+
+/* Product images remain their own soft surfaces */
+.purelane-product-card__image {
+  background: rgba(241,247,241,.82) !important;
+  border: 1px solid rgba(255,255,255,.72);
+  box-shadow:
+    0 10px 28px rgba(7,63,57,.055),
+    inset 0 1px 0 rgba(255,255,255,.65);
+}
+
+/* Slightly softer product text against the green canvas */
+.purelane-product-card__info {
+  position: relative;
+  z-index: 2;
+}
+
+.purelane-product-card__info h3,
+.purelane-product-card__info h3 a {
+  color: #073f39;
+}
+
+.purelane-product-card__current-price {
+  color: #073f39;
+}
+
+/* Keep the whole Shop section visually connected to Reviews above
+   and the next section below. */
+.purelane-shop + section {
+  border-top: 0 !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 750px) {
+  .purelane-shop {
+    padding: 65px 5% 75px;
+  }
+}
+
+
+/* =========================================================
+   PURELANE COMBOS + BUNDLES
+   Continuous green canvas — light glass cards
+   ========================================================= */
+
+/* ---------- COMBOS: shared page canvas ---------- */
+
+.purelane-combos {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent !important;
+  color: #17102d !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Soft waves flowing through the section */
+.purelane-combos::before,
+.purelane-combos::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -8%;
+  width: 116%;
+  height: 220px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(.45px);
+}
+
+.purelane-combos::before {
+  top: 8%;
+  border-top: 1px solid rgba(255,255,255,.58);
+  border-bottom: 1px solid rgba(255,255,255,.20);
+  transform: rotate(-2deg);
+}
+
+.purelane-combos::after {
+  bottom: 8%;
+  border-top: 1px solid rgba(255,255,255,.42);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  transform: rotate(2deg);
+}
+
+/* Header on light canvas */
+.purelane-combos__heading {
+  color: #17102d !important;
+}
+
+.purelane-combos__description {
+  color: #526b68 !important;
+}
+
+.purelane-combos__eyebrow,
+.purelane-combos__leaf {
+  color: #7b9e22 !important;
+}
+
+.purelane-combos__rule span:first-child,
+.purelane-combos__rule span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(82,111,113,.22),
+    transparent
+  ) !important;
+}
+
+/* ---------- COMBO CARDS ---------- */
+
+.purelane-combo-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.82),
+      rgba(237,247,240,.72) 58%,
+      rgba(213,239,222,.68)
+    ) !important;
+
+  border: 1px solid rgba(255,255,255,.82) !important;
+
+  box-shadow:
+    0 18px 45px rgba(7,63,57,.10),
+    inset 0 1px 0 rgba(255,255,255,.85) !important;
+
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+.purelane-combo-card--highlight {
+  border-color: rgba(199,119,23,.48) !important;
+
+  box-shadow:
+    0 20px 48px rgba(7,63,57,.12),
+    0 0 0 1px rgba(199,119,23,.12),
+    inset 0 1px 0 rgba(255,255,255,.88) !important;
+}
+
+.purelane-combo-card__tray {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.48),
+      rgba(226,242,231,.36)
+    ) !important;
+
+  border-bottom-color: rgba(82,111,113,.13) !important;
+}
+
+.purelane-combo-card__product > span {
+  color: #526b68 !important;
+}
+
+.purelane-combo-card__body h3 {
+  color: #17102d !important;
+}
+
+.purelane-combo-card__count,
+.purelane-combo-card__description,
+.purelane-combo-card__fine {
+  color: #607976 !important;
+}
+
+.purelane-combo-card__price strong {
+  color: #17102d !important;
+}
+
+.purelane-combo-card__price s {
+  color: #84918e !important;
+}
+
+.purelane-combo-card__button {
+  background: rgba(255,255,255,.62) !important;
+  border-color: rgba(82,111,113,.22) !important;
+  color: #075f59 !important;
+}
+
+.purelane-combo-card__button:hover {
+  background: rgba(255,255,255,.84) !important;
+}
+
+.purelane-combo-card__button--primary {
+  background: #006c65 !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.purelane-combo-card__button--primary:hover {
+  background: #07574f !important;
+}
+
+.purelane-combos__swipe-hint,
+.purelane-combos__note {
+  color: #607976 !important;
+}
+
+.purelane-combos__swipe-hint span {
+  color: #c77717 !important;
+}
+
+/* ---------- BUNDLES: same shared canvas ---------- */
+
+.purelane-bundles {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: transparent !important;
+  color: #17102d !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.purelane-bundles::before,
+.purelane-bundles::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -8%;
+  width: 116%;
+  height: 220px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(.45px);
+}
+
+.purelane-bundles::before {
+  top: 10%;
+  border-top: 1px solid rgba(255,255,255,.52);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  transform: rotate(-2deg);
+}
+
+.purelane-bundles::after {
+  bottom: 8%;
+  border-top: 1px solid rgba(255,255,255,.42);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  transform: rotate(2deg);
+}
+
+/* Bundle intro */
+.purelane-bundles__intro h2 {
+  color: #17102d !important;
+}
+
+.purelane-bundles__intro p {
+  color: #607976 !important;
+}
+
+.purelane-bundles__eyebrow {
+  color: #7b9e22 !important;
+}
+
+/* ---------- BUNDLE CARDS ---------- */
+
+.purelane-bundle {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.82),
+      rgba(237,247,240,.72) 58%,
+      rgba(213,239,222,.68)
+    ) !important;
+
+  border-color: rgba(255,255,255,.82) !important;
+
+  box-shadow:
+    0 18px 45px rgba(7,63,57,.10),
+    inset 0 1px 0 rgba(255,255,255,.82) !important;
+
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+.purelane-bundle:hover {
+  border-color: rgba(82,111,113,.25) !important;
+  box-shadow:
+    0 22px 50px rgba(7,63,57,.13),
+    inset 0 1px 0 rgba(255,255,255,.88) !important;
+}
+
+.purelane-bundle--featured {
+  border-color: rgba(199,119,23,.48) !important;
+
+  box-shadow:
+    0 22px 52px rgba(7,63,57,.13),
+    0 0 0 1px rgba(199,119,23,.12),
+    inset 0 1px 0 rgba(255,255,255,.88) !important;
+}
+
+.purelane-bundle__body {
+  border-top-color: rgba(82,111,113,.13) !important;
+}
+
+.purelane-bundle__body h3 {
+  color: #17102d !important;
+}
+
+.purelane-bundle__count,
+.purelane-bundle__description,
+.purelane-bundle__price-note,
+.purelane-bundle__benefits li {
+  color: #607976 !important;
+}
+
+.purelane-bundle__price strong {
+  color: #17102d !important;
+}
+
+.purelane-bundle__price s {
+  color: #84918e !important;
+}
+
+.purelane-bundle__product img,
+.purelane-bundle__product-placeholder {
+  background: rgba(255,255,255,.50) !important;
+  border-color: rgba(82,111,113,.14) !important;
+}
+
+.purelane-bundle__product span {
+  color: #607976 !important;
+}
+
+.purelane-bundle__button {
+  background: rgba(255,255,255,.62) !important;
+  border-color: rgba(82,111,113,.22) !important;
+  color: #075f59 !important;
+}
+
+.purelane-bundle__button:hover {
+  background: rgba(255,255,255,.84) !important;
+}
+
+.purelane-bundle__button--primary {
+  background: #006c65 !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.purelane-bundle__button--primary:hover {
+  background: #07574f !important;
+}
+
+/* Keep section transitions invisible */
+.purelane-combos + .purelane-bundles,
+.purelane-bundles + section {
+  border-top: 0 !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 760px) {
+  .purelane-combos,
+  .purelane-bundles {
+    background: transparent !important;
+  }
+}
+/* =========================================================
+   PURELANE CLUB / FIRST BUNDLE OFFER
+   Same continuous green canvas as Combos + Bundles
+   ========================================================= */
+
+.purelane-club,
+.purelane-signup,
+.shopify-section:has(.signup) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep the green/wavy page background flowing behind it */
+.shopify-section:has(.signup)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  left: -8%;
+  width: 116%;
+  height: 220px;
+
+  border-radius: 50%;
+  pointer-events: none;
+
+  border-top: 1px solid rgba(255,255,255,.45);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+
+  transform: rotate(-2deg);
+  opacity: .8;
+}
+
+/* The actual offer card stays floating above the background */
+.shopify-section:has(.signup) .signup {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.82),
+      rgba(237,247,240,.72) 58%,
+      rgba(213,239,222,.68)
+    ) !important;
+
+  border: 1px solid rgba(255,255,255,.82) !important;
+
+  box-shadow:
+    0 18px 45px rgba(7,63,57,.10),
+    inset 0 1px 0 rgba(255,255,255,.85) !important;
+
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+/* Heading */
+.shopify-section:has(.signup) .signup h2 {
+  color: #17102d !important;
+}
+
+/* Supporting text */
+.shopify-section:has(.signup) .signup p {
+  color: #607976 !important;
+}
+
+/* Small green eyebrow */
+.shopify-section:has(.signup) .signup .kicker {
+  color: #7b9e22 !important;
+}
+
+/* Input / coupon box */
+.shopify-section:has(.signup) .signup input {
+  background: rgba(255,255,255,.62) !important;
+  border: 1px solid rgba(82,111,113,.20) !important;
+  color: #17102d !important;
+}
+
+/* CTA */
+.shopify-section:has(.signup) .signup button {
+  background: #006c65 !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+
+.shopify-section:has(.signup) .signup button:hover {
+  background: #07574f !important;
+}
+
+/* Remove any section-level separation */
+.shopify-section:has(.signup) {
+  margin: 0 !important;
+}
+
+/* =========================================================
+   PURELANE — GLOBAL SMOOTH INTERACTION PASS
+   Existing design preserved; only motion/easing improved.
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+:root {
+  --pl-ease-smooth: cubic-bezier(.22, 1, .36, 1);
+  --pl-ease-soft: cubic-bezier(.25, .8, .25, 1);
+  --pl-ease-spring: cubic-bezier(.16, 1, .3, 1);
+}
+
+/* Header / navigation */
+.purelane-header__nav a,
+.purelane-header__nav-link,
+.purelane-header a {
+  transition:
+    color .28s var(--pl-ease-soft),
+    opacity .28s var(--pl-ease-soft),
+    transform .38s var(--pl-ease-smooth),
+    background-color .28s var(--pl-ease-soft),
+    border-color .28s var(--pl-ease-soft);
+}
+
+/* Hero */
+.purelane-hero-v2__waves span {
+  transition: transform .8s var(--pl-ease-smooth);
+}
+
+.purelane-hero-v2__stage {
+  transition: transform .75s var(--pl-ease-smooth);
+}
+
+.purelane-hero-v2__slide {
+  transition: opacity .72s var(--pl-ease-soft);
+}
+
+.purelane-hero-v2__bottle {
+  transition:
+    opacity .68s var(--pl-ease-soft),
+    transform .85s var(--pl-ease-spring),
+    filter .45s var(--pl-ease-soft);
+}
+
+.purelane-hero-v2__offer {
+  transition:
+    opacity .55s var(--pl-ease-soft),
+    transform .7s var(--pl-ease-spring);
+}
+
+.purelane-hero-v2__button {
+  transition:
+    transform .42s var(--pl-ease-smooth),
+    box-shadow .42s var(--pl-ease-soft),
+    background-color .35s var(--pl-ease-soft),
+    border-color .35s var(--pl-ease-soft),
+    color .35s var(--pl-ease-soft);
+}
+
+.purelane-hero-v2__button--primary span {
+  transition: transform .42s var(--pl-ease-smooth);
+}
+
+.purelane-hero-v2__dots button {
+  transition:
+    width .42s var(--pl-ease-smooth),
+    height .42s var(--pl-ease-smooth),
+    background-color .3s var(--pl-ease-soft),
+    transform .35s var(--pl-ease-smooth);
+}
+
+/* Shop */
+.purelane-shop__view-all {
+  transition:
+    color .3s var(--pl-ease-soft),
+    opacity .3s var(--pl-ease-soft),
+    transform .4s var(--pl-ease-smooth);
+}
+
+.purelane-shop__view-all:hover {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.purelane-product-card {
+  transition: transform .45s var(--pl-ease-smooth);
+}
+
+.purelane-product-card__image {
+  transition:
+    box-shadow .45s var(--pl-ease-soft),
+    transform .45s var(--pl-ease-smooth);
+}
+
+.purelane-product-card__image img {
+  transition: transform .7s var(--pl-ease-smooth);
+}
+
+.purelane-product-card:hover .purelane-product-card__image {
+  box-shadow: 0 18px 38px rgba(7,63,57,.10);
+}
+
+.purelane-product-card__info h3 a {
+  transition: color .3s var(--pl-ease-soft);
+}
+
+.purelane-product-card__button {
+  transition:
+    transform .42s var(--pl-ease-smooth),
+    background-color .35s var(--pl-ease-soft),
+    box-shadow .35s var(--pl-ease-soft);
+}
+
+.purelane-product-card__button:hover {
+  box-shadow: 0 10px 22px rgba(7,63,57,.16);
+}
+
+/* Combos rail + cards */
+.purelane-combos__rail {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.purelane-combo-card {
+  transition:
+    transform .55s var(--pl-ease-smooth),
+    border-color .4s var(--pl-ease-soft),
+    box-shadow .55s var(--pl-ease-smooth);
+}
+
+.purelane-combo-card:hover {
+  transform: translateY(-7px);
+}
+
+.purelane-combo-card__button {
+  transition:
+    transform .42s var(--pl-ease-smooth),
+    background-color .35s var(--pl-ease-soft),
+    border-color .35s var(--pl-ease-soft),
+    box-shadow .35s var(--pl-ease-soft),
+    color .3s var(--pl-ease-soft);
+}
+
+.purelane-combo-card__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(7,63,57,.12);
+}
+
+/* Bundles */
+.purelane-bundle {
+  transition:
+    transform .55s var(--pl-ease-smooth),
+    border-color .4s var(--pl-ease-soft),
+    box-shadow .55s var(--pl-ease-smooth);
+}
+
+.purelane-bundle:hover {
+  transform: translateY(-7px);
+}
+
+.purelane-bundle__button {
+  transition:
+    transform .42s var(--pl-ease-smooth),
+    background-color .35s var(--pl-ease-soft),
+    border-color .35s var(--pl-ease-soft),
+    box-shadow .35s var(--pl-ease-soft),
+    color .3s var(--pl-ease-soft);
+}
+
+.purelane-bundle__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(7,63,57,.12);
+}
+
+/* Ingredients / reviews */
+.purelane-ingredient,
+.purelane-review,
+.purelane-review-card,
+.purelane-ingredients__card {
+  transition:
+    transform .55s var(--pl-ease-smooth),
+    box-shadow .5s var(--pl-ease-smooth),
+    border-color .4s var(--pl-ease-soft);
+}
+
+.purelane-ingredient:hover,
+.purelane-review:hover,
+.purelane-review-card:hover,
+.purelane-ingredients__card:hover {
+  transform: translateY(-5px);
+}
+
+/* Signup / offer */
+.purelane-signup,
+.signup {
+  transition:
+    transform .55s var(--pl-ease-smooth),
+    box-shadow .55s var(--pl-ease-smooth),
+    border-color .4s var(--pl-ease-soft);
+}
+
+.purelane-signup button,
+.signup button,
+.purelane-signup a,
+.signup a {
+  transition:
+    transform .42s var(--pl-ease-smooth),
+    background-color .35s var(--pl-ease-soft),
+    box-shadow .35s var(--pl-ease-soft),
+    color .3s var(--pl-ease-soft);
+}
+
+.purelane-signup button:hover,
+.signup button:hover,
+.purelane-signup a:hover,
+.signup a:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.purelane-footer a,
+.purelane-footer__link,
+footer a {
+  transition:
+    color .3s var(--pl-ease-soft),
+    opacity .3s var(--pl-ease-soft),
+    transform .45s var(--pl-ease-smooth);
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .purelane-product-card:hover,
+  .purelane-combo-card:hover,
+  .purelane-bundle:hover,
+  .purelane-ingredient:hover,
+  .purelane-review:hover,
+  .purelane-review-card:hover,
+  .purelane-ingredients__card:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-padding-top: 0;
+  }
+
+  .purelane-header__nav a,
+  .purelane-header__nav-link,
+  .purelane-header a,
+  .purelane-hero-v2__waves span,
+  .purelane-hero-v2__stage,
+  .purelane-hero-v2__slide,
+  .purelane-hero-v2__bottle,
+  .purelane-hero-v2__offer,
+  .purelane-hero-v2__button,
+  .purelane-hero-v2__dots button,
+  .purelane-product-card,
+  .purelane-product-card__image,
+  .purelane-product-card__image img,
+  .purelane-product-card__button,
+  .purelane-combo-card,
+  .purelane-combo-card__button,
+  .purelane-bundle,
+  .purelane-bundle__button,
+  .purelane-ingredient,
+  .purelane-review,
+  .purelane-review-card,
+  .purelane-ingredients__card,
+  .purelane-signup,
+  .signup,
+  .purelane-footer a,
+  .purelane-footer__link,
+  footer a {
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   PURELANE HEADER — RESTORED NAV UNDERLINE
+   ========================================================= */
+
+.purelane-header__nav-link {
+  position: relative !important;
+  text-decoration: none !important;
+}
+
+.purelane-header__nav-link::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 13px !important;
+  right: 13px !important;
+  bottom: 2px !important;
+
+  height: 2px !important;
+  border-radius: 999px !important;
+
+  background: #c77717 !important;
+
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  opacity: 0 !important;
+
+  transition:
+    transform .35s cubic-bezier(.22, 1, .36, 1),
+    opacity .25s ease !important;
+
+  pointer-events: none !important;
+}
+
+.purelane-header__nav-link:hover::after,
+.purelane-header__nav-link:focus-visible::after,
+.purelane-header__nav-link[aria-current="page"]::after {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+}
+
+/* Keep the underline visible for the currently selected link */
+.purelane-header__nav-link.active::after,
+.purelane-header__nav-link.is-active::after {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
 }

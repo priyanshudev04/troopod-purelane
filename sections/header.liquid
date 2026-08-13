@@ -88,7 +88,6 @@
     -webkit-backdrop-filter: blur(14px);
   }
 
-
   /* =====================================================
      BRAND
      ===================================================== */
@@ -158,7 +157,6 @@
     text-transform: uppercase;
   }
 
-
   /* =====================================================
      DESKTOP NAV
      ===================================================== */
@@ -202,59 +200,11 @@
       background-color .2s ease;
   }
 
-  .purelane-header__nav-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 9px 13px;
-
-  color: #554d67;
-
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 500;
-
-  text-decoration: none;
-
-  border-radius: 999px;
-
-  position: relative;
-
-  transition:
-    color .2s ease,
-    background-color .2s ease;
-}
-
-/* Hover underline */
-.purelane-header__nav-link::after {
-  content: "";
-
-  position: absolute;
-  left: 13px;
-  right: 13px;
-  bottom: 3px;
-
-  height: 2px;
-
-  background: #59448f;
-
-  transform: scaleX(0);
-  transform-origin: left;
-
-  transition: transform .25s ease;
-}
-
-/* Animate left → right */
-.purelane-header__nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-.purelane-header__nav-link:hover {
-  color: #332a47;
-  background: rgba(255,255,255,.65);
-}
-
+  .purelane-header__nav-link:hover,
+  .purelane-header__nav-link[aria-current="page"] {
+    color: #332a47;
+    background: rgba(255,255,255,.65);
+  }
 
   /* =====================================================
      ACTIONS
@@ -295,46 +245,14 @@
     height: 19px;
   }
 
-
-  /* =====================================================
-     PURELANE CART
-     ===================================================== */
-
   .purelane-header__cart {
     position: relative;
   }
 
-  .purelane-header__cart .purelane-cart-icon {
-    width: 21px;
-    height: 21px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-  }
-
-  .purelane-header__cart .purelane-cart-icon svg {
-    width: 21px;
-    height: 21px;
-
-    display: block;
-
-    color: #514960;
-  }
-
-
-  /* Always show cart count */
-
   .purelane-header__cart .cart-count-bubble {
-    position: absolute;
+    top: 0;
+    right: 0;
 
-    top: -1px;
-    right: -1px;
-
-    width: 16px;
-    height: 16px;
     min-width: 16px;
     min-height: 16px;
 
@@ -342,24 +260,14 @@
     align-items: center;
     justify-content: center;
 
-    padding: 0;
-
     background: #59448f;
-    color: #ffffff;
+    color: #fff;
 
     border-radius: 50%;
 
     font-size: 9px;
-    font-weight: 700;
     line-height: 16px;
-
-    z-index: 2;
   }
-
-  .purelane-header__cart .cart-count-bubble span {
-    display: block;
-  }
-
 
   /* =====================================================
      MOBILE
@@ -449,44 +357,18 @@
       display: none;
     }
 
-    .purelane-header__cart .purelane-cart-icon {
-      width: 20px;
-      height: 20px;
-    }
-
-    .purelane-header__cart .purelane-cart-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
   }
-
 
   @media screen and (max-width: 380px) {
 
     .purelane-header {
       width: calc(100% - 12px);
-
       padding-left: 5px;
       padding-right: 5px;
     }
 
     .purelane-header__brand-name {
       font-size: 14px;
-    }
-
-  }
-
-
-  /* =====================================================
-     REDUCED MOTION
-     ===================================================== */
-
-  @media (prefers-reduced-motion: reduce) {
-
-    .purelane-header__nav-link,
-    .purelane-header__actions .header__icon {
-      transition: none;
     }
 
   }
@@ -516,7 +398,6 @@
 
     <header class="purelane-header">
 
-
       <!-- =================================================
            MOBILE MENU
       ================================================== -->
@@ -541,10 +422,7 @@
 
               </summary>
 
-              <div
-                id="menu-drawer"
-                class="gradient menu-drawer motion-reduce"
-              >
+              <div id="menu-drawer" class="gradient menu-drawer motion-reduce">
 
                 <div class="menu-drawer__inner-container">
 
@@ -552,10 +430,7 @@
 
                     <nav class="menu-drawer__navigation">
 
-                      <ul
-                        class="menu-drawer__menu has-submenu list-menu"
-                        role="list"
-                      >
+                      <ul class="menu-drawer__menu has-submenu list-menu" role="list">
 
                         {% for link in section.settings.menu.links %}
 
@@ -689,7 +564,7 @@
 
           <li>
             <a
-              href="{{ routes.all_products_collection_url }}"
+              href="{{ routes.root_url }}#shop"
               class="purelane-header__nav-link"
             >
               Shop
@@ -716,19 +591,16 @@
 
       <div class="purelane-header__actions">
 
-
-        <!-- SEARCH -->
+        <!-- Search -->
 
         <div class="purelane-header__search">
 
-          {% render 'header-search',
-            input_id: 'Search-In-Modal-Purelane'
-          %}
+          {% render 'header-search', input_id: 'Search-In-Modal-Purelane' %}
 
         </div>
 
 
-        <!-- ACCOUNT -->
+        <!-- Account -->
 
         {%- if shop.customer_accounts_enabled -%}
 
@@ -737,10 +609,7 @@
             class="header__icon header__icon--account link focus-inset"
           >
 
-            <span
-              slot="signed-out-avatar"
-              class="svg-wrapper"
-            >
+            <span slot="signed-out-avatar" class="svg-wrapper">
               {{ 'icon-account.svg' | inline_asset_content }}
             </span>
 
@@ -756,7 +625,7 @@
         {%- endif -%}
 
 
-        <!-- CART -->
+        <!-- Cart -->
 
         <a
           href="{{ routes.cart_url }}"
@@ -764,62 +633,41 @@
           id="cart-icon-bubble"
         >
 
-          <span
-            class="purelane-cart-icon"
-            aria-hidden="true"
-          >
+          {% if cart == empty %}
 
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <span class="svg-wrapper">
+              {{ 'icon-cart-empty.svg' | inline_asset_content }}
+            </span>
 
-              <path
-                d="M4 5H6L7.8 15.2C8 16.3 9 17 10.1 17H17.5C18.5 17 19.4 16.3 19.7 15.3L21 9H7"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+          {% else %}
 
-              <circle
-                cx="10"
-                cy="19.5"
-                r="1.1"
-                fill="currentColor"
-              />
+            <span class="svg-wrapper">
+              {{ 'icon-cart.svg' | inline_asset_content }}
+            </span>
 
-              <circle
-                cx="17"
-                cy="19.5"
-                r="1.1"
-                fill="currentColor"
-              />
-
-            </svg>
-
-          </span>
-
+          {% endif %}
 
           <span class="visually-hidden">
             {{ 'templates.cart.cart' | t }}
           </span>
 
+          {%- if cart != empty -%}
 
-          <!-- ALWAYS SHOW CART COUNT -->
+            <div class="cart-count-bubble">
 
-          <div class="cart-count-bubble">
+              {%- if cart.item_count < 100 -%}
+                <span aria-hidden="true">
+                  {{ cart.item_count }}
+                </span>
+              {%- endif -%}
 
-            <span aria-hidden="true">
-              {{ cart.item_count }}
-            </span>
+              <span class="visually-hidden">
+                {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+              </span>
 
-            <span class="visually-hidden">
-              {{ 'sections.header.cart_count' | t: count: cart.item_count }}
-            </span>
+            </div>
 
-          </div>
+          {%- endif -%}
 
         </a>
 
@@ -865,11 +713,9 @@
       );
 
       if (this.headerIsAlwaysSticky) {
-
         this.header.classList.add(
           'shopify-section-header-sticky'
         );
-
       }
 
       this.currentScrollTop = 0;
@@ -888,7 +734,6 @@
       this.createObserver();
     }
 
-
     setHeaderHeight() {
 
       if (!this.header) return;
@@ -897,9 +742,7 @@
         '--header-height',
         `${this.header.offsetHeight}px`
       );
-
     }
-
 
     disconnectedCallback() {
 
@@ -912,9 +755,7 @@
         'scroll',
         this.onScrollHandler
       );
-
     }
-
 
     createObserver() {
 
@@ -933,9 +774,7 @@
         );
 
       observer.observe(this.header);
-
     }
-
 
     onScroll() {
 
@@ -978,16 +817,60 @@
 
       this.currentScrollTop =
         scrollTop;
-
     }
 
   }
-
 
   customElements.define(
     'sticky-header',
     StickyHeader
   );
+
+
+  /* =========================================================
+     PURELANE — SMOOTH ANCHOR NAVIGATION
+     Shop points to the homepage Shop All section instead of
+     opening Shopify's /collections/all route.
+     ========================================================= */
+  (() => {
+    const header = document.querySelector('.section-header');
+    const headerOffset = () => (header ? header.getBoundingClientRect().height + 18 : 92);
+
+    const getShopTarget = () => document.querySelector('.purelane-shop');
+
+    const smoothTo = (target) => {
+      if (!target) return false;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset();
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      return true;
+    };
+
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href]');
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+      if (!href.endsWith('#shop')) return;
+
+      const sameOrigin = link.origin === window.location.origin;
+      const isHome = sameOrigin && link.pathname === window.location.pathname;
+      const target = getShopTarget();
+
+      if (target && isHome) {
+        event.preventDefault();
+        history.pushState(null, '', '#shop');
+        smoothTo(target);
+      }
+    }, { passive: false });
+
+    window.addEventListener('load', () => {
+      if (window.location.hash === '#shop') {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => smoothTo(getShopTarget()));
+        });
+      }
+    });
+  })();
 
 {% endjavascript %}
 

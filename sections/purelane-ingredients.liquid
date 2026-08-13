@@ -1,9 +1,6 @@
 {{ 'purelane.css' | asset_url | stylesheet_tag }}
 
-<section
-  class="purelane-ingredients"
-  id="ingredients"
->
+<section class="purelane-ingredients" id="ingredients">
   <div class="purelane-ingredients__container">
 
     <div class="purelane-ingredients__header">
@@ -14,14 +11,10 @@
         </span>
       {% endif %}
 
-      <h2>
-        {{ section.settings.heading }}
-      </h2>
+      <h2>{{ section.settings.heading }}</h2>
 
       {% if section.settings.description != blank %}
-        <p>
-          {{ section.settings.description }}
-        </p>
+        <p>{{ section.settings.description }}</p>
       {% endif %}
 
     </div>
@@ -47,7 +40,7 @@
                   | image_tag:
                     loading: 'lazy',
                     widths: '120,180,240',
-                    sizes: '120px',
+                    sizes: '72px',
                     alt: block.settings.title
                 }}
 
@@ -65,15 +58,11 @@
             </div>
 
             {% if block.settings.title != blank %}
-              <h3>
-                {{ block.settings.title }}
-              </h3>
+              <h3>{{ block.settings.title }}</h3>
             {% endif %}
 
             {% if block.settings.description != blank %}
-              <p>
-                {{ block.settings.description }}
-              </p>
+              <p>{{ block.settings.description }}</p>
             {% endif %}
 
           </article>
