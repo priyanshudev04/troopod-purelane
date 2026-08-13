@@ -1,0 +1,74 @@
+{{ 'purelane.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="purelane-sticky-cta"
+  id="sticky-cta"
+>
+  <div class="purelane-sticky-cta__inner">
+
+    <div class="purelane-sticky-cta__content">
+
+      {% if section.settings.heading != blank %}
+        <strong class="purelane-sticky-cta__heading">
+          {{ section.settings.heading }}
+        </strong>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <span class="purelane-sticky-cta__subheading">
+          {{ section.settings.subheading }}
+        </span>
+      {% endif %}
+
+    </div>
+
+    {% if section.settings.button_label != blank %}
+
+      <a
+        href="{{ section.settings.button_link | default: '#bundles' }}"
+        class="purelane-sticky-cta__button"
+      >
+        {{ section.settings.button_label }}
+        <span aria-hidden="true">→</span>
+      </a>
+
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purelane Sticky CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pick any 3, pay ₹499"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Free shipping, always"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Build bundle"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane Sticky CTA"
+    }
+  ]
+}
+{% endschema %}
