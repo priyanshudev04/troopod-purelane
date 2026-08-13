@@ -1,0 +1,408 @@
+{{ 'purelane.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="purelane-reviews"
+  id="reviews"
+>
+  <div class="purelane-reviews__container">
+
+    <div class="purelane-reviews__header">
+
+      <span class="purelane-reviews__eyebrow">
+        {{ section.settings.eyebrow }}
+      </span>
+
+      <div class="purelane-reviews__stats">
+
+        <span class="purelane-reviews__stat">
+          <span
+            class="purelane-reviews__stars"
+            aria-label="{{ section.settings.rating }} out of 5 stars"
+          >
+            ★★★★★
+          </span>
+
+          <strong>
+            {{ section.settings.rating }}
+          </strong>
+
+          <span>
+            {{ section.settings.review_count }}
+          </span>
+        </span>
+
+        <span class="purelane-reviews__stat">
+          {{ section.settings.homes_text }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {% if section.blocks.size > 0 %}
+
+    <div
+      class="purelane-reviews__rail"
+      aria-label="Customer reviews"
+    >
+
+      <div class="purelane-reviews__track">
+
+        {% for block in section.blocks %}
+
+          <article
+            class="purelane-review"
+            {{ block.shopify_attributes }}
+          >
+
+            <div
+              class="purelane-review__stars"
+              aria-label="5 out of 5 stars"
+            >
+              ★★★★★
+            </div>
+
+            {% if block.settings.title != blank %}
+              <h3>
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+            {% if block.settings.review != blank %}
+              <p>
+                {{ block.settings.review }}
+              </p>
+            {% endif %}
+
+            <div class="purelane-review__author">
+
+              <span
+                class="purelane-review__verified"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+              {% if block.settings.name != blank %}
+                <strong>
+                  {{ block.settings.name }}
+                </strong>
+              {% endif %}
+
+              {% if block.settings.product != blank %}
+                <span>
+                  · {{ block.settings.product }}
+                </span>
+              {% endif %}
+
+            </div>
+
+          </article>
+
+        {% endfor %}
+
+        {%- comment -%}
+          Duplicate the cards so the CSS marquee can loop seamlessly.
+        {%- endcomment -%}
+
+        {% for block in section.blocks %}
+
+          <article
+            class="purelane-review"
+            aria-hidden="true"
+          >
+
+            <div class="purelane-review__stars">
+              ★★★★★
+            </div>
+
+            {% if block.settings.title != blank %}
+              <h3>
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+            {% if block.settings.review != blank %}
+              <p>
+                {{ block.settings.review }}
+              </p>
+            {% endif %}
+
+            <div class="purelane-review__author">
+
+              <span class="purelane-review__verified">
+                ✓
+              </span>
+
+              {% if block.settings.name != blank %}
+                <strong>
+                  {{ block.settings.name }}
+                </strong>
+              {% endif %}
+
+              {% if block.settings.product != blank %}
+                <span>
+                  · {{ block.settings.product }}
+                </span>
+              {% endif %}
+
+            </div>
+
+          </article>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  {% else %}
+
+    <div class="purelane-reviews__empty">
+      <p>
+        Add review blocks from the Theme Editor.
+      </p>
+    </div>
+
+  {% endif %}
+
+</section>
+<script>
+  (() => {
+    const rail = document.querySelector('.purelane-reviews__rail');
+    const track = document.querySelector('.purelane-reviews__track');
+
+    if (!rail || !track || track.dataset.swipeReady === 'true') return;
+
+    track.dataset.swipeReady = 'true';
+
+    let animation = null;
+    let isDragging = false;
+    let startX = 0;
+    let startTime = 0;
+    let lastTime = 0;
+
+    const getAnimation = () => {
+      if (animation && animation.playState !== 'idle') {
+        return animation;
+      }
+
+      animation = track
+        .getAnimations()
+        .find((item) => {
+          return item.animationName === 'purelane-review-marquee';
+        }) || track.getAnimations()[0];
+
+      return animation;
+    };
+
+    const pauseAnimation = () => {
+      const currentAnimation = getAnimation();
+
+      if (!currentAnimation) return null;
+
+      currentAnimation.pause();
+
+      return currentAnimation;
+    };
+
+    rail.addEventListener('pointerdown', (event) => {
+      const currentAnimation = pauseAnimation();
+
+      if (!currentAnimation) return;
+
+      isDragging = true;
+      startX = event.clientX;
+      startTime = currentAnimation.currentTime || 0;
+      lastTime = startTime;
+
+      rail.classList.add('is-dragging');
+
+      rail.setPointerCapture?.(event.pointerId);
+    });
+
+    rail.addEventListener('pointermove', (event) => {
+      if (!isDragging) return;
+
+      const currentAnimation = getAnimation();
+
+      if (!currentAnimation) return;
+
+      const distance = event.clientX - startX;
+
+      /*
+        The CSS animation moves left.
+        Dragging left should move the reviews forward.
+        Dragging right should move them backward.
+      */
+      const pixelsPerSecond = 25;
+
+      const timeOffset =
+        (distance / pixelsPerSecond) * 1000;
+
+      let nextTime = startTime - timeOffset;
+
+      const duration =
+        currentAnimation.effect?.getComputedTiming()?.duration;
+
+      if (typeof duration === 'number' && duration > 0) {
+        nextTime = ((nextTime % duration) + duration) % duration;
+      }
+
+      currentAnimation.currentTime = nextTime;
+      lastTime = nextTime;
+    });
+
+    const stopDragging = (event) => {
+      if (!isDragging) return;
+
+      isDragging = false;
+      rail.classList.remove('is-dragging');
+
+      try {
+        rail.releasePointerCapture?.(event.pointerId);
+      } catch (error) {
+        // Pointer capture may already be released.
+      }
+
+      const currentAnimation = getAnimation();
+
+      if (currentAnimation) {
+        currentAnimation.play();
+      }
+    };
+
+    rail.addEventListener('pointerup', stopDragging);
+    rail.addEventListener('pointercancel', stopDragging);
+    rail.addEventListener('lostpointercapture', () => {
+      if (!isDragging) return;
+
+      isDragging = false;
+      rail.classList.remove('is-dragging');
+
+      const currentAnimation = getAnimation();
+
+      if (currentAnimation) {
+        currentAnimation.play();
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Purelane Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "THAT'S WHAT THEY SAID"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Overall rating",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count text",
+      "default": "from 8,000+ reviews"
+    },
+    {
+      "type": "text",
+      "id": "homes_text",
+      "label": "Homes text",
+      "default": "Loved by 12 lakh+ homes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review title",
+          "default": "Works like a charm"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review",
+          "default": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name",
+          "default": "Anita"
+        },
+        {
+          "type": "text",
+          "id": "product",
+          "label": "Product",
+          "default": "Laundry detergent"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purelane Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "title": "Works like a charm",
+            "review": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better.",
+            "name": "Anita",
+            "product": "Laundry detergent"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Best dishwash ever",
+            "review": "Our old dishwash left my hands with dry, cracked skin. That stopped completely after we switched.",
+            "name": "Priya",
+            "product": "Dishwash gel"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Great product, great packaging",
+            "review": "Very soft on hands with a lovely fragrance, and it feels good to be using far less plastic.",
+            "name": "Sunita",
+            "product": "Liquid handwash"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Dog friendly",
+            "review": "We switched because chemical floor cleaners were setting off my dog's allergies. No reactions since.",
+            "name": "Rohit S.",
+            "product": "Floor cleaner"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "title": "Sparkling taps again",
+            "review": "Hard water had ruined our bathroom fittings. Two sprays and the scale wipes straight off, no scrubbing.",
+            "name": "Verified buyer",
+            "product": "Tap cleaner"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

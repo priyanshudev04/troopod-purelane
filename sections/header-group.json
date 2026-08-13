@@ -52,10 +52,260 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "purelane_hero_nYcqRE": {
+      "type": "purelane-hero",
+      "name": "Purelane Hero",
+      "settings": {
+        "heading": "Clean home. Clear conscience.",
+        "description": "Plant-powered cleaning that works without the harsh chemicals."
+      }
+    },
+    "purelane_shop_xtzA4i": {
+      "type": "purelane-shop",
+      "name": "Purelane Shop",
+      "settings": {
+        "heading": "Shop our essentials",
+        "collection": "shop-all",
+        "products_to_show": 8
+      }
+    },
+    "purelane_combos_7n9XbV": {
+      "type": "purelane-combos",
+      "blocks": {
+        "combo_9AVREk": {
+          "type": "combo",
+          "settings": {
+            "title": "Kitchen essentials",
+            "badge": "Most Popular",
+            "saving_label": "You save",
+            "highlight": false,
+            "product_1": "kitchen-cleaner-foaming-plant-based-cleaner",
+            "product_1_label": "Cuts grease instantly",
+            "product_2": "dish-wash-plant-powered-grease-fighter",
+            "product_2_label": "Squeaky clean dishes",
+            "product_3": "multi-surface-cleaner-citrus-botanical-formula",
+            "product_3_label": "Cleans everyday kitchen surfaces",
+            "description": "Everything you need for a sparkling kitchen, packed into one simple bundle.",
+            "count_label": "3 products",
+            "bundle_price": 499,
+            "compare_price": 897,
+            "fine_print": "Inclusive of all taxes · COD available",
+            "button_label": "Shop bundle",
+            "button_link": ""
+          }
+        },
+        "combo_8WYHXM": {
+          "type": "combo",
+          "settings": {
+            "title": "Bathroom essentials",
+            "badge": "Fresh and Clean",
+            "saving_label": "You save",
+            "highlight": false,
+            "product_1": "natural-toilet-cleaner-deep-clean-botanical-formula",
+            "product_1_label": "Deep cleans toilet bowls",
+            "product_2": "bathroom-cleaner-natural-limescale-grime-remover",
+            "product_2_label": "Removes limescale & grime",
+            "product_3": "glass-surface-cleaner-streak-free-plant-formula",
+            "product_3_label": "Leaves surfaces streak-free",
+            "description": "A simple bathroom cleaning trio for a fresh, spotless home.",
+            "count_label": "3 products",
+            "bundle_price": 499,
+            "compare_price": 897,
+            "fine_print": "Inclusive of all taxes · COD available",
+            "button_label": "Shop bundle",
+            "button_link": ""
+          }
+        },
+        "combo_ykWUf7": {
+          "type": "combo",
+          "settings": {
+            "title": "Complete home bundle",
+            "badge": "Best Value",
+            "saving_label": "You save",
+            "highlight": false,
+            "product_1": "kitchen-cleaner-foaming-plant-based-cleaner",
+            "product_1_label": "Cuts through kitchen grease",
+            "product_2": "floor-cleaner-fresh-botanical-concentrate",
+            "product_2_label": "Freshens floors naturally",
+            "product_3": "laundry-liquid-gentle-plant-based-everyday-wash",
+            "product_3_label": "Gentle everyday laundry care",
+            "description": "Three everyday essentials for a cleaner, fresher home.",
+            "count_label": "3 products",
+            "bundle_price": 1099,
+            "compare_price": 1599,
+            "fine_print": "Inclusive of all taxes · COD available",
+            "button_label": "Shop bundle",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "combo_9AVREk",
+        "combo_8WYHXM",
+        "combo_ykWUf7"
+      ],
+      "name": "Purelane Combos",
+      "settings": {
+        "eyebrow": "Pre-built to save you money",
+        "heading": "Best selling combos",
+        "description": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own.",
+        "background_color": "#17102b",
+        "text_color": "#faf7fd",
+        "accent_color": "#f0a03c",
+        "show_swipe_hint": true,
+        "bottom_note": "Choose your combo and continue shopping. Products can still be changed before checkout."
+      }
+    },
+    "purelane_bundles_4Xfi4q": {
+      "type": "purelane-bundles",
+      "blocks": {
+        "bundle_kwEMFH": {
+          "type": "bundle",
+          "settings": {
+            "tag": "Starter",
+            "title": "Starter box",
+            "products": [
+              "kitchen-cleaner-foaming-plant-based-cleaner",
+              "dish-wash-plant-powered-grease-fighter"
+            ],
+            "bundle_price": "₹349",
+            "compare_price": "₹598",
+            "price_note": "Flat ₹174 per product",
+            "description": "Pick any two products and save compared with buying separately.",
+            "benefits": "Pick any two products\nFree shipping across India",
+            "button_label": "Build this box",
+            "button_link": "",
+            "featured": false
+          }
+        },
+        "bundle_TCtrYP": {
+          "type": "bundle",
+          "settings": {
+            "tag": "Most popular",
+            "title": "Everyday essentials",
+            "products": [
+              "kitchen-cleaner-foaming-plant-based-cleaner",
+              "dish-wash-plant-powered-grease-fighter",
+              "laundry-liquid-gentle-plant-based-everyday-wash"
+            ],
+            "bundle_price": "₹499",
+            "compare_price": "₹897",
+            "price_note": "Flat ₹166 per product",
+            "description": "Three everyday cleaning essentials packed into one box.",
+            "benefits": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India",
+            "button_label": "Build this box",
+            "button_link": "",
+            "featured": true
+          }
+        },
+        "bundle_X3UkTx": {
+          "type": "bundle",
+          "settings": {
+            "tag": "Whole home",
+            "title": "Complete home box",
+            "products": [
+              "bathroom-cleaner-natural-limescale-grime-remover",
+              "floor-cleaner-fresh-botanical-concentrate",
+              "glass-surface-cleaner-streak-free-plant-formula",
+              "kitchen-cleaner-foaming-plant-based-cleaner",
+              "laundry-liquid-gentle-plant-based-everyday-wash"
+            ],
+            "bundle_price": "₹799",
+            "compare_price": "₹1495",
+            "price_note": "Flat ₹160 per product",
+            "description": "Everything you need for a cleaner, fresher home.",
+            "benefits": "Pick any five products\nEvery room in one order\nFree shipping across India",
+            "button_label": "Build this box",
+            "button_link": "",
+            "featured": false
+          }
+        }
+      },
+      "block_order": [
+        "bundle_kwEMFH",
+        "bundle_TCtrYP",
+        "bundle_X3UkTx"
+      ],
+      "name": "Purelane Bundles",
+      "settings": {
+        "eyebrow": "BUILD YOUR BUNDLE",
+        "heading": "One box. Every room.",
+        "description": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+      }
+    },
+    "purelane_reviews_phjAkQ": {
+      "type": "purelane-reviews",
+      "blocks": {
+        "review_X3ELER": {
+          "type": "review",
+          "settings": {
+            "title": "Works like a charm",
+            "review": "Finally an eco option that cleans as well as the chemical detergent I used for years, and it smells better.",
+            "name": "Anita",
+            "product": "Laundry detergent"
+          }
+        },
+        "review_MAaQD8": {
+          "type": "review",
+          "settings": {
+            "title": "Best dishwash ever",
+            "review": "Our old dishwash left my hands with dry, cracked skin. That stopped completely after we switched.",
+            "name": "Priya",
+            "product": "Dishwash gel"
+          }
+        },
+        "review_HPtR6W": {
+          "type": "review",
+          "settings": {
+            "title": "Great product, great packaging",
+            "review": "Very soft on hands with a lovely fragrance, and it feels good to be using far less plastic.",
+            "name": "Sunita",
+            "product": "Liquid handwash"
+          }
+        },
+        "review_rJ9JEi": {
+          "type": "review",
+          "settings": {
+            "title": "Dog friendly",
+            "review": "We switched because chemical floor cleaners were setting off my dog's allergies. No reactions since.",
+            "name": "Rohit S.",
+            "product": "Floor cleaner"
+          }
+        },
+        "review_nKkYUE": {
+          "type": "review",
+          "settings": {
+            "title": "Sparkling taps again",
+            "review": "Hard water had ruined our bathroom fittings. Two sprays and the scale wipes straight off, no scrubbing.",
+            "name": "Verified buyer",
+            "product": "Tap cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "review_X3ELER",
+        "review_MAaQD8",
+        "review_HPtR6W",
+        "review_rJ9JEi",
+        "review_nKkYUE"
+      ],
+      "name": "Purelane Reviews",
+      "settings": {
+        "eyebrow": "THAT'S WHAT THEY SAID",
+        "rating": "4.8",
+        "review_count": "from 8,000+ reviews",
+        "homes_text": "Loved by 12 lakh+ homes"
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "purelane_hero_nYcqRE",
+    "purelane_shop_xtzA4i",
+    "purelane_combos_7n9XbV",
+    "purelane_bundles_4Xfi4q",
+    "purelane_reviews_phjAkQ"
   ]
 }
