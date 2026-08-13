@@ -2460,3 +2460,146 @@
 .purelane-reviews__track {
   animation-play-state: paused;
 }
+/* =========================================================
+   PURELANE BUNDLES — HORIZONTAL SWIPE / SLIDER
+   ========================================================= */
+
+.purelane-bundles__grid {
+  display: flex;
+  gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  justify-content: safe center;
+
+  padding: 4px 2px 18px;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.purelane-bundles__grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Desktop:
+   3 cards visible at once.
+   4th, 5th... cards come on horizontal swipe. */
+.purelane-bundle {
+  flex: 0 0 calc((100% - 36px) / 3);
+  min-width: 0;
+
+  scroll-snap-align: start;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .purelane-bundles__grid {
+    width: calc(100% + 16px);
+
+    margin-left: -8px;
+    margin-right: -8px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+    gap: 16px;
+
+    justify-content: flex-start;
+  }
+
+  .purelane-bundle {
+    flex: 0 0 min(302px, calc(100vw - 48px));
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+  .purelane-bundles__grid {
+    width: calc(100% + 16px);
+
+    margin-left: -8px;
+    margin-right: -8px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .purelane-bundle {
+    flex-basis: calc(100vw - 40px);
+  }
+
+}
+/* =========================================================
+   BUNDLES — SWIPE HINT
+   ========================================================= */
+
+.purelane-bundles__container::after {
+  content: "←  SWIPE FOR MORE  →";
+
+  display: block;
+  width: fit-content;
+
+  margin: 14px auto 0;
+
+  color: #8f869c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+
+  animation: purelane-bundle-swipe-hint 1.8s ease-in-out infinite;
+}
+
+@keyframes purelane-bundle-swipe-hint {
+  0%,
+  100% {
+    opacity: .45;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(6px);
+  }
+}
+
+/* Hide hint when there is nothing to swipe */
+@media screen and (min-width: 760px) {
+  .purelane-bundles__grid:has(.purelane-bundle:nth-child(4)) 
+  ~ * {
+    /* keep hint visible */
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .purelane-bundles__container::after {
+    margin-top: 12px;
+    font-size: 9px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .purelane-bundles__container::after {
+    animation: none;
+  }
+}
